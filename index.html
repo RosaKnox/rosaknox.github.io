@@ -1,46 +1,430 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Wanted Toontown Assets</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one centred reading column; the GIF heads it at a modest size, then the
+   totals table, then one section per group with its names as wrapping chips. */
+:root {
+  --sky: #e9f3fa;        /* page ground: a pale Toontown sky */
+  --paper: #ffffff;      /* table and chip surfaces */
+  --ink: #1c2a3a;        /* text */
+  --muted: #5a6b7d;      /* secondary text */
+  --line: #cfdeea;       /* rules and borders */
+  --accent: #d2452c;     /* Toontown sign red: headings' marks, links */
+  --gold: #f2b631;       /* counts */
+  --chip: #f4f8fb;
+  --font-display: "Fredoka", "Trebuchet MS", system-ui, sans-serif;
+  --font-body: "Nunito Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --sky: #111b26; --paper: #182533; --ink: #e6eef5; --muted: #9fb0c1; --line: #2a3a4c;
+    --accent: #ff7a5c; --gold: #f5c457; --chip: #1d2c3b; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --sky: #111b26; --paper: #182533; --ink: #e6eef5; --muted: #9fb0c1; --line: #2a3a4c;
+  --accent: #ff7a5c; --gold: #f5c457; --chip: #1d2c3b; color-scheme: dark;
+}
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+body {
+  background: var(--sky);
+  color: var(--ink);
+  font: 16px/1.6 var(--font-body);
+}
+.page {
+  max-width: 54rem;
+  margin: 0 auto;
+  padding-inline: 16px;
+  padding-block: 2rem 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+a { color: var(--accent); text-underline-offset: 2px; }
+a:focus-visible, summary:focus-visible, input:focus-visible {
+  outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px;
+}
+h1, h2 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.15;
+  text-wrap: balance;
+  margin: 0;
+}
+h1 { font-size: clamp(2rem, 6vw, 2.8rem); }
+h2 { font-size: 1.55rem; }
+code, .names, .path { font-family: var(--font-mono); }
+code { font-size: 0.88em; background: var(--chip); padding: 0.05em 0.3em; border-radius: 4px; }
 
-    <title>Rosa Knox's Portfolio</title>
-  </head>
-  <body class="bg-dark">
-    <header>
-      <!-- Navigation -->
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Rosa Knox</a>
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Projects</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
-          </li>
-        </ul>
-      </nav>
-    </header>
-    <main class="text-light text-center row" role="main">
-      <div class="col my-auto">
-      <h1>Rosa Knox</h1>
-      <p class="lead">
-        Game developer and idea creator, working to create exciting and unique digital experiences.
-      </p>
+/* Header */
+header { display: flex; flex-direction: column; align-items: center; gap: 1.25rem; text-align: center; }
+.eyebrow {
+  font-size: 0.78rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--muted); margin: 0;
+}
+figure { margin: 0; display: flex; flex-direction: column; align-items: center; gap: 0.5rem; }
+figure img {
+  display: block;
+  width: min(100%, 420px);
+  height: auto;
+  aspect-ratio: 4 / 3;
+  max-width: 100%;
+  border-radius: 14px;
+  border: 3px solid var(--paper);
+  box-shadow: 0 6px 24px rgb(28 42 58 / 0.18);
+}
+figcaption { font-size: 0.85rem; color: var(--muted); max-width: 32rem; }
+.lede { max-width: 40rem; margin: 0; font-size: 1.08rem; }
+
+/* Intro */
+.intro { display: flex; flex-direction: column; gap: 0.9rem; max-width: 42rem; }
+.intro p { margin: 0; }
+.prefixes { display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; margin: 0; padding: 0; list-style: none; font-size: 0.92rem; }
+.prefixes code { font-weight: 500; }
+
+/* Totals */
+.table-wrap { overflow-x: auto; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+  font-variant-numeric: tabular-nums;
+}
+th, td { padding: 0.55rem 0.9rem; border-bottom: 1px solid var(--line); text-align: left; }
+thead th { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); font-weight: 700; }
+th[scope="row"] { font-weight: 600; }
+th[scope="row"] a { color: var(--ink); text-decoration: none; }
+th[scope="row"] a:hover { color: var(--accent); text-decoration: underline; }
+.num { text-align: right; width: 6.5rem; }
+.zero { color: var(--muted); }
+tr.total th, tr.total td { font-weight: 700; border-top: 2px solid var(--ink); }
+tr.season th, tr.season td { color: var(--muted); font-style: italic; border-bottom: 0; }
+tr.season a { color: var(--muted) !important; }
+
+/* Filter */
+.filter { display: flex; flex-direction: column; gap: 0.35rem; position: sticky; top: env(safe-area-inset-top, 0px); z-index: 2; background: var(--sky); padding-block: 0.75rem; }
+.filter label { font-weight: 700; font-size: 0.9rem; }
+.filter input {
+  font: 1rem var(--font-mono);
+  padding: 0.6rem 0.8rem;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--paper);
+  color: var(--ink);
+  width: 100%;
+  box-sizing: border-box;
+}
+.filter .status { font-size: 0.85rem; color: var(--muted); min-height: 1.3em; margin: 0; }
+
+/* Groups */
+.groups { display: flex; flex-direction: column; gap: 2.5rem; }
+.group { display: flex; flex-direction: column; gap: 0.75rem; scroll-margin-top: 7rem; }
+.group h2::before {
+  content: ""; display: inline-block; width: 0.55em; height: 0.55em; margin-right: 0.45em;
+  background: var(--accent); border-radius: 50%; vertical-align: 0.12em;
+}
+.blurb { margin: 0; max-width: 42rem; color: var(--muted); }
+.kind { border-top: 1px solid var(--line); padding-top: 0.6rem; }
+.kind summary { cursor: pointer; font-weight: 700; display: flex; align-items: center; gap: 0.5rem; list-style-position: outside; }
+.kcount {
+  font-size: 0.8rem; font-variant-numeric: tabular-nums; background: var(--gold); color: #3a2a00;
+  padding: 0.05rem 0.55rem; border-radius: 999px;
+}
+.folder { margin-top: 0.75rem; min-width: 0; }
+.path { font-size: 0.8rem; color: var(--muted); margin-bottom: 0.35rem; overflow-wrap: anywhere; }
+.names { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.35rem; font-size: 0.8rem; }
+.names li {
+  background: var(--paper); border: 1px solid var(--line); border-radius: 6px;
+  padding: 0.15rem 0.5rem; overflow-wrap: anywhere; min-width: 0;
+}
+.names li.hit { border-color: var(--accent); }
+.seasonal-wrap { opacity: 0.92; }
+.seasonal-wrap > summary {
+  cursor: pointer; font-family: var(--font-display); font-weight: 600; font-size: 1.3rem;
+}
+.seasonal-wrap[open] > summary { margin-bottom: 1rem; }
+.contact { display: flex; flex-direction: column; gap: 0.75rem; background: var(--paper); border: 1px solid var(--line); border-radius: 14px; padding: 1.25rem 1.4rem; }
+.contact p { margin: 0; }
+.handle { display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem 0.9rem; }
+.handle-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+.handle-name { font-family: var(--font-mono); font-size: 1.15rem; font-weight: 500; user-select: all; }
+.contact button {
+  font: 600 0.9rem var(--font-body); color: var(--paper); background: var(--accent);
+  border: 0; border-radius: 999px; padding: 0.4rem 1rem; cursor: pointer;
+}
+.contact button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+footer { font-size: 0.85rem; color: var(--muted); border-top: 1px solid var(--line); padding-top: 1rem; }
+footer p { margin: 0 0 0.5rem; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+
+<div class="page">
+  <header>
+    <p class="eyebrow">ToonTown Godot · sourcing list · 5 October 2026</p>
+    <figure>
+      <img src="toon_wave.gif" width="640" height="480" alt="A dog toon in a striped shirt and yellow shorts waves at the camera in Toontown Central, with the bank, Toon Hall and the library behind.">
+      <figcaption>A toon built from the converted files, waving in front of Toon Hall in my Godot rebuild of Toontown Central.</figcaption>
+    </figure>
+    <h1>Wanted: late Toontown assets</h1>
+    <p class="lede">I'm rebuilding Toontown Online in the Godot engine. Every asset from my copy of the original game files is converted and running, but those files predate the final game. These 624 pieces were added later, and I haven't found them anywhere yet.</p>
+  </header>
+
+  <section class="intro" aria-labelledby="how">
+    <h2 id="how">How to help</h2>
+    <p>If you have any of these files, in any format, I'd love a copy. Maya scenes (<code>.mb</code>), Panda3D files (<code>.egg</code> or <code>.bam</code>), textures (<code>.jpg</code>, <code>.rgb</code>, <code>.png</code>) and sounds (<code>.ogg</code>, <code>.mp3</code>, <code>.wav</code>) all help. Names here are the final game's, without the extension. You can reach me on Discord (details at the bottom of the page).</p>
+    <p>The name's prefix tells you what a file is:</p>
+    <ul class="prefixes">
+      <li><code>tt_m_</code> model</li>
+      <li><code>tt_a_</code> animation</li>
+      <li><code>tt_r_</code> rig</li>
+      <li><code>tt_t_</code> texture</li>
+      <li><code>tt_s_</code> sound</li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="glance" style="display:flex;flex-direction:column;gap:0.9rem">
+    <h2 id="glance">At a glance</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th scope="col">Group</th><th scope="col" class="num">Models</th><th scope="col" class="num">Textures</th><th scope="col" class="num">Sounds</th></tr></thead>
+        <tbody><tr><th scope="row"><a href="#toon-accessories">Toon accessories</a></th><td class="num">110</td><td class="num">204</td><td class="num zero">–</td></tr><tr><th scope="row"><a href="#cogdominiums-and-field-offices">Cogdominiums and Field Offices</a></th><td class="num">36</td><td class="num">43</td><td class="num">13</td></tr><tr><th scope="row"><a href="#silly-meter-and-the-ttc-scientists">Silly Meter and the TTC scientists</a></th><td class="num">40</td><td class="num">11</td><td class="num">7</td></tr><tr><th scope="row"><a href="#quest-maps">Quest maps</a></th><td class="num">7</td><td class="num">1</td><td class="num zero">–</td></tr><tr><th scope="row"><a href="#gui-and-shticker-book">GUI and Shticker Book</a></th><td class="num">10</td><td class="num">6</td><td class="num">2</td></tr><tr><th scope="row"><a href="#parties">Parties</a></th><td class="num">3</td><td class="num">2</td><td class="num">1</td></tr><tr><th scope="row"><a href="#cog-suits">Cog suits</a></th><td class="num">2</td><td class="num">10</td><td class="num zero">–</td></tr><tr><th scope="row"><a href="#late-clothing">Late clothing</a></th><td class="num zero">–</td><td class="num">95</td><td class="num zero">–</td></tr><tr><th scope="row"><a href="#playground-and-building-updates">Playground and building updates</a></th><td class="num">8</td><td class="num">13</td><td class="num zero">–</td></tr><tr class="total"><th scope="row">Wanted, total</th><td class="num">216</td><td class="num">385</td><td class="num">23</td></tr><tr class="season"><th scope="row"><a href="#seasonal">Seasonal and holiday</a></th><td class="num">301</td><td class="num">84</td><td class="num">194</td></tr></tbody>
+      </table>
     </div>
-    </main>
+  </section>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  </body>
-</html>
+  <div class="filter">
+    <label for="find">Find a file name</label>
+    <input id="find" type="search" placeholder="e.g. sillyMeter, hat_fedora, cogdominium" autocomplete="off" spellcheck="false">
+    <p class="status" id="find-status" aria-live="polite"></p>
+  </div>
+
+  <div class="groups">
+<section class="group" id="toon-accessories" data-group>
+<h2>Toon accessories</h2>
+<p class="blurb">Hats, glasses, backpacks and shoes from the Cattlelog and the estate accessory trunk (2010 on).</p>
+<details class="kind" data-kind ><summary><span class="kname">Models</span> <span class="kcount">110</span></summary>
+<div class="folder"><div class="path">phase_4/models/accessories/</div><ul class="names"><li>backpack_textures</li><li>backpack_textures_released</li><li>glasses_textures</li><li>hat_textures</li><li>hat_textures_released</li><li>shoes_textures</li><li>shoes_textures_released</li><li>tt_m_chr_avt_acc_hat_antenna</li><li>tt_m_chr_avt_acc_hat_anvil</li><li>tt_m_chr_avt_acc_hat_band</li><li>tt_m_chr_avt_acc_hat_bandana</li><li>tt_m_chr_avt_acc_hat_baseball</li><li>tt_m_chr_avt_acc_hat_beeHiveHairdo</li><li>tt_m_chr_avt_acc_hat_birdNest</li><li>tt_m_chr_avt_acc_hat_bobbyHat</li><li>tt_m_chr_avt_acc_hat_bowler</li><li>tt_m_chr_avt_acc_hat_carmenMirandaFruitHat</li><li>tt_m_chr_avt_acc_hat_chefsHat</li><li>tt_m_chr_avt_acc_hat_conquistadorHelmet</li><li>tt_m_chr_avt_acc_hat_cowboyHat</li><li>tt_m_chr_avt_acc_hat_crown</li><li>tt_m_chr_avt_acc_hat_detective</li><li>tt_m_chr_avt_acc_hat_dinosaur</li><li>tt_m_chr_avt_acc_hat_feathers</li><li>tt_m_chr_avt_acc_hat_fedora</li><li>tt_m_chr_avt_acc_hat_fez</li><li>tt_m_chr_avt_acc_hat_firefighterHelmet</li><li>tt_m_chr_avt_acc_hat_fishingHat</li><li>tt_m_chr_avt_acc_hat_flowerPot</li><li>tt_m_chr_avt_acc_hat_foilPyramid</li><li>tt_m_chr_avt_acc_hat_golfHat</li><li>tt_m_chr_avt_acc_hat_heart</li><li>tt_m_chr_avt_acc_hat_jugheadHat</li><li>tt_m_chr_avt_acc_hat_mickeysBandConductorHat</li><li>tt_m_chr_avt_acc_hat_minersHardhatWithLight</li><li>tt_m_chr_avt_acc_hat_napoleonHat</li><li>tt_m_chr_avt_acc_hat_nativeAmericanFeather</li><li>tt_m_chr_avt_acc_hat_partyHat</li><li>tt_m_chr_avt_acc_hat_pillBox</li><li>tt_m_chr_avt_acc_hat_pilotsCap</li><li>tt_m_chr_avt_acc_hat_pirateHat</li><li>tt_m_chr_avt_acc_hat_policeHat</li><li>tt_m_chr_avt_acc_hat_pompadorHairdo</li><li>tt_m_chr_avt_acc_hat_princess</li><li>tt_m_chr_avt_acc_hat_propellerHat</li><li>tt_m_chr_avt_acc_hat_rainbowAfroWig</li><li>tt_m_chr_avt_acc_hat_ribbon</li><li>tt_m_chr_avt_acc_hat_robinHoodHat</li><li>tt_m_chr_avt_acc_hat_romanHelmet</li><li>tt_m_chr_avt_acc_hat_safari</li><li>tt_m_chr_avt_acc_hat_sailorHat</li><li>tt_m_chr_avt_acc_hat_sandbag</li><li>tt_m_chr_avt_acc_hat_sombreroHat</li><li>tt_m_chr_avt_acc_hat_spiderAntennaThingy</li><li>tt_m_chr_avt_acc_hat_strawHat</li><li>tt_m_chr_avt_acc_hat_sunHat</li><li>tt_m_chr_avt_acc_hat_tiara</li><li>tt_m_chr_avt_acc_hat_topHat</li><li>tt_m_chr_avt_acc_hat_vikingHelmet</li><li>tt_m_chr_avt_acc_hat_weight</li><li>tt_m_chr_avt_acc_hat_winter</li><li>tt_m_chr_avt_acc_hat_witch</li><li>tt_m_chr_avt_acc_hat_wizard</li><li>tt_m_chr_avt_acc_msk_3dGlasses</li><li>tt_m_chr_avt_acc_msk_alienGlasses</li><li>tt_m_chr_avt_acc_msk_aviator</li><li>tt_m_chr_avt_acc_msk_catEyeGlasses</li><li>tt_m_chr_avt_acc_msk_dorkGlasses</li><li>tt_m_chr_avt_acc_msk_eyepatch</li><li>tt_m_chr_avt_acc_msk_goggles</li><li>tt_m_chr_avt_acc_msk_grouchoMarxEyebrow</li><li>tt_m_chr_avt_acc_msk_heartGlasses</li><li>tt_m_chr_avt_acc_msk_insectEyeGlasses</li><li>tt_m_chr_avt_acc_msk_jackieOShades</li><li>tt_m_chr_avt_acc_msk_masqueradeTypeMask</li><li>tt_m_chr_avt_acc_msk_masqueradeTypeMask3</li><li>tt_m_chr_avt_acc_msk_miniblinds</li><li>tt_m_chr_avt_acc_msk_monocle</li><li>tt_m_chr_avt_acc_msk_mouthGlasses</li><li>tt_m_chr_avt_acc_msk_narrowGlasses</li><li>tt_m_chr_avt_acc_msk_roundGlasses</li><li>tt_m_chr_avt_acc_msk_scubaMask</li><li>tt_m_chr_avt_acc_msk_squareRims</li><li>tt_m_chr_avt_acc_msk_starGlasses</li><li>tt_m_chr_avt_acc_pac_airplane</li><li>tt_m_chr_avt_acc_pac_angelWings</li><li>tt_m_chr_avt_acc_pac_backpack</li><li>tt_m_chr_avt_acc_pac_backpackWithToys</li><li>tt_m_chr_avt_acc_pac_band</li><li>tt_m_chr_avt_acc_pac_batWings</li><li>tt_m_chr_avt_acc_pac_beeWings</li><li>tt_m_chr_avt_acc_pac_birdWings</li><li>tt_m_chr_avt_acc_pac_butterflyWings</li><li>tt_m_chr_avt_acc_pac_dinosaurTail</li><li>tt_m_chr_avt_acc_pac_dragonFlyWings</li><li>tt_m_chr_avt_acc_pac_dragonWing</li><li>tt_m_chr_avt_acc_pac_flunky</li><li>tt_m_chr_avt_acc_pac_gags</li><li>tt_m_chr_avt_acc_pac_jetPack</li><li>tt_m_chr_avt_acc_pac_scubaTank</li><li>tt_m_chr_avt_acc_pac_sharkFin</li><li>tt_m_chr_avt_acc_pac_spiderLegs</li><li>tt_m_chr_avt_acc_pac_stuffedAnimalBackpackA</li><li>tt_m_chr_avt_acc_pac_stuffedAnimalBackpackCat</li><li>tt_m_chr_avt_acc_pac_stuffedAnimalBackpackDog</li><li>tt_m_chr_avt_acc_pac_supertoonCape</li><li>tt_m_chr_avt_acc_pac_vampireCape</li><li>tt_m_chr_avt_acc_pac_woodenSword</li></ul></div>
+<div class="folder"><div class="path">phase_5.5/models/estate/</div><ul class="names"><li>tt_m_ara_est_accessoryTrunkBoy</li><li>tt_m_ara_est_accessoryTrunkGirl</li></ul></div>
+</details>
+<details class="kind" data-kind ><summary><span class="kname">Textures</span> <span class="kcount">204</span></summary>
+<div class="folder"><div class="path">phase_3/maps/</div><ul class="names"><li>tt_t_chr_avt_acc_sho_athleticGreen</li><li>tt_t_chr_avt_acc_sho_docMartinBootsGreen</li><li>tt_t_chr_avt_acc_sho_docMartinBootsGreenLL</li></ul></div>
+<div class="folder"><div class="path">phase_4/maps/</div><ul class="names"><li>tt_t_chr_avt_acc_hat_antenna</li><li>tt_t_chr_avt_acc_hat_anvil</li><li>tt_t_chr_avt_acc_hat_band</li><li>tt_t_chr_avt_acc_hat_bandanaRedStripe</li><li>tt_t_chr_avt_acc_hat_baseballBlue</li><li>tt_t_chr_avt_acc_hat_baseballGreen</li><li>tt_t_chr_avt_acc_hat_baseballOrange</li><li>tt_t_chr_avt_acc_hat_baseballPurple</li><li>tt_t_chr_avt_acc_hat_baseballRed</li><li>tt_t_chr_avt_acc_hat_baseballTeal</li><li>tt_t_chr_avt_acc_hat_baseballYellow</li><li>tt_t_chr_avt_acc_hat_beeHiveHairdo</li><li>tt_t_chr_avt_acc_hat_birdNest</li><li>tt_t_chr_avt_acc_hat_bobbyHat</li><li>tt_t_chr_avt_acc_hat_bowler</li><li>tt_t_chr_avt_acc_hat_carmenMirandaFruitHat</li><li>tt_t_chr_avt_acc_hat_chefsHat</li><li>tt_t_chr_avt_acc_hat_conquistadorHelmet</li><li>tt_t_chr_avt_acc_hat_cowboyHat</li><li>tt_t_chr_avt_acc_hat_crownGold</li><li>tt_t_chr_avt_acc_hat_detective</li><li>tt_t_chr_avt_acc_hat_dinosaur</li><li>tt_t_chr_avt_acc_hat_feathers</li><li>tt_t_chr_avt_acc_hat_fedora</li><li>tt_t_chr_avt_acc_hat_fez</li><li>tt_t_chr_avt_acc_hat_firefighterHelmet</li><li>tt_t_chr_avt_acc_hat_fishingHat</li><li>tt_t_chr_avt_acc_hat_flowerPot</li><li>tt_t_chr_avt_acc_hat_foilPyramid</li><li>tt_t_chr_avt_acc_hat_golfHat</li><li>tt_t_chr_avt_acc_hat_heartPink</li><li>tt_t_chr_avt_acc_hat_heartYellow</li><li>tt_t_chr_avt_acc_hat_jugheadHat</li><li>tt_t_chr_avt_acc_hat_mickeysBandConductorHat</li><li>tt_t_chr_avt_acc_hat_minersHardhatWithLight</li><li>tt_t_chr_avt_acc_hat_napoleonHat</li><li>tt_t_chr_avt_acc_hat_nativeAmericanFeather</li><li>tt_t_chr_avt_acc_hat_partyHat</li><li>tt_t_chr_avt_acc_hat_partyToon</li><li>tt_t_chr_avt_acc_hat_pillBox</li><li>tt_t_chr_avt_acc_hat_pilotsCap</li><li>tt_t_chr_avt_acc_hat_pirateHat</li><li>tt_t_chr_avt_acc_hat_policeHat</li><li>tt_t_chr_avt_acc_hat_pompadorHairdo</li><li>tt_t_chr_avt_acc_hat_princess</li><li>tt_t_chr_avt_acc_hat_propellerHat</li><li>tt_t_chr_avt_acc_hat_rainbowAfroWig</li><li>tt_t_chr_avt_acc_hat_ribbonChecker</li><li>tt_t_chr_avt_acc_hat_ribbonCheckerGreen</li><li>tt_t_chr_avt_acc_hat_ribbonLtRed</li><li>tt_t_chr_avt_acc_hat_ribbonPink</li><li>tt_t_chr_avt_acc_hat_ribbonPinkDots</li><li>tt_t_chr_avt_acc_hat_ribbonPurple</li><li>tt_t_chr_avt_acc_hat_ribbonRainbow</li><li>tt_t_chr_avt_acc_hat_ribbonRed</li><li>tt_t_chr_avt_acc_hat_ribbonYellow</li><li>tt_t_chr_avt_acc_hat_robinHoodHat</li><li>tt_t_chr_avt_acc_hat_romanHelmet</li><li>tt_t_chr_avt_acc_hat_safariBeige</li><li>tt_t_chr_avt_acc_hat_safariBrown</li><li>tt_t_chr_avt_acc_hat_safariGreen</li><li>tt_t_chr_avt_acc_hat_sailorHat</li><li>tt_t_chr_avt_acc_hat_sandbag</li><li>tt_t_chr_avt_acc_hat_sombreroHat</li><li>tt_t_chr_avt_acc_hat_spiderAntennaThingy</li><li>tt_t_chr_avt_acc_hat_strawHat</li><li>tt_t_chr_avt_acc_hat_sunHat</li><li>tt_t_chr_avt_acc_hat_tiara</li><li>tt_t_chr_avt_acc_hat_topHatBlack</li><li>tt_t_chr_avt_acc_hat_topHatBlue</li><li>tt_t_chr_avt_acc_hat_vikingHelmet</li><li>tt_t_chr_avt_acc_hat_weight</li><li>tt_t_chr_avt_acc_hat_winter</li><li>tt_t_chr_avt_acc_hat_witch</li><li>tt_t_chr_avt_acc_hat_wizard</li><li>tt_t_chr_avt_acc_msk_3dGlasses</li><li>tt_t_chr_avt_acc_msk_alienGlasses</li><li>tt_t_chr_avt_acc_msk_aviator</li><li>tt_t_chr_avt_acc_msk_catEyeGlasses</li><li>tt_t_chr_avt_acc_msk_dorkGlasses</li><li>tt_t_chr_avt_acc_msk_eyepatchGems</li><li>tt_t_chr_avt_acc_msk_eyepatchSkull</li><li>tt_t_chr_avt_acc_msk_glassesStarYellow</li><li>tt_t_chr_avt_acc_msk_goggles</li><li>tt_t_chr_avt_acc_msk_grouchoMarxEyebrow</li><li>tt_t_chr_avt_acc_msk_heartGlasses</li><li>tt_t_chr_avt_acc_msk_insectEyeGlasses</li><li>tt_t_chr_avt_acc_msk_jackieOShades</li><li>tt_t_chr_avt_acc_msk_masqueradeTypeMask1</li><li>tt_t_chr_avt_acc_msk_masqueradeTypeMask2</li><li>tt_t_chr_avt_acc_msk_masqueradeTypeMask3</li><li>tt_t_chr_avt_acc_msk_masqueradeTypeMask4</li><li>tt_t_chr_avt_acc_msk_masqueradeTypeMask5</li><li>tt_t_chr_avt_acc_msk_miniblindsWhite</li><li>tt_t_chr_avt_acc_msk_monocle</li><li>tt_t_chr_avt_acc_msk_mouthGlasses</li><li>tt_t_chr_avt_acc_msk_narrowGlassesPurple</li><li>tt_t_chr_avt_acc_msk_roundGlassesBlack</li><li>tt_t_chr_avt_acc_msk_scubaMask</li><li>tt_t_chr_avt_acc_msk_squareRims</li><li>tt_t_chr_avt_acc_pac_airplane</li><li>tt_t_chr_avt_acc_pac_angelWingsMultiColor</li><li>tt_t_chr_avt_acc_pac_angelWingsWhite</li><li>tt_t_chr_avt_acc_pac_backpackBlue</li><li>tt_t_chr_avt_acc_pac_backpackOrange</li><li>tt_t_chr_avt_acc_pac_backpackPolkaDotRed</li><li>tt_t_chr_avt_acc_pac_backpackPolkaDotYellow</li><li>tt_t_chr_avt_acc_pac_backpackPurple</li><li>tt_t_chr_avt_acc_pac_backpackWithToys</li><li>tt_t_chr_avt_acc_pac_band</li><li>tt_t_chr_avt_acc_pac_batWings</li><li>tt_t_chr_avt_acc_pac_beeWings</li><li>tt_t_chr_avt_acc_pac_birdWings</li><li>tt_t_chr_avt_acc_pac_butterflyWingsStyle1</li><li>tt_t_chr_avt_acc_pac_butterflyWingsStyle2</li><li>tt_t_chr_avt_acc_pac_dinosaur</li><li>tt_t_chr_avt_acc_pac_dragonFlyWings</li><li>tt_t_chr_avt_acc_pac_dragonWing</li><li>tt_t_chr_avt_acc_pac_flunky</li><li>tt_t_chr_avt_acc_pac_gags</li><li>tt_t_chr_avt_acc_pac_jetpack</li><li>tt_t_chr_avt_acc_pac_scubaTank</li><li>tt_t_chr_avt_acc_pac_sharkFin</li><li>tt_t_chr_avt_acc_pac_spiderLegs</li><li>tt_t_chr_avt_acc_pac_stuffedAnimalBackpackA</li><li>tt_t_chr_avt_acc_pac_stuffedAnimalBackpackCat</li><li>tt_t_chr_avt_acc_pac_stuffedAnimalBackpackDog</li><li>tt_t_chr_avt_acc_pac_supertoonCape</li><li>tt_t_chr_avt_acc_pac_vampireCape</li><li>tt_t_chr_avt_acc_pac_woodenSword</li><li>tt_t_chr_avt_acc_sho_athleticBlack</li><li>tt_t_chr_avt_acc_sho_athleticRed</li><li>tt_t_chr_avt_acc_sho_athleticYellow</li><li>tt_t_chr_avt_acc_sho_converseStyleBlack</li><li>tt_t_chr_avt_acc_sho_converseStyleGreen</li><li>tt_t_chr_avt_acc_sho_converseStylePink</li><li>tt_t_chr_avt_acc_sho_converseStyleRed</li><li>tt_t_chr_avt_acc_sho_converseStyleWhite</li><li>tt_t_chr_avt_acc_sho_converseStyleYellow</li><li>tt_t_chr_avt_acc_sho_cowboyBoots</li><li>tt_t_chr_avt_acc_sho_cowboyBootsLL</li><li>tt_t_chr_avt_acc_sho_deckShoes</li><li>tt_t_chr_avt_acc_sho_dinosaur</li><li>tt_t_chr_avt_acc_sho_dinosaurLL</li><li>tt_t_chr_avt_acc_sho_docMartinBootsAqua</li><li>tt_t_chr_avt_acc_sho_docMartinBootsAquaLL</li><li>tt_t_chr_avt_acc_sho_docMartinBootsBrown</li><li>tt_t_chr_avt_acc_sho_docMartinBootsBrownLL</li><li>tt_t_chr_avt_acc_sho_docMartinBootsPink</li><li>tt_t_chr_avt_acc_sho_docMartinBootsPinkLL</li><li>tt_t_chr_avt_acc_sho_docMartinBootsYellow</li><li>tt_t_chr_avt_acc_sho_docMartinBootsYellowLL</li><li>tt_t_chr_avt_acc_sho_fashionBootsBlueSquares</li><li>tt_t_chr_avt_acc_sho_fashionBootsBlueSquaresLL</li><li>tt_t_chr_avt_acc_sho_fashionBootsGreenHearts</li><li>tt_t_chr_avt_acc_sho_fashionBootsGreenHeartsLL</li><li>tt_t_chr_avt_acc_sho_fashionBootsGreyDots</li><li>tt_t_chr_avt_acc_sho_fashionBootsGreyDotsLL</li><li>tt_t_chr_avt_acc_sho_fashionBootsOrangeStars</li><li>tt_t_chr_avt_acc_sho_fashionBootsOrangeStarsLL</li><li>tt_t_chr_avt_acc_sho_fashionBootsPinkStars</li><li>tt_t_chr_avt_acc_sho_fashionBootsPinkStarsLL</li><li>tt_t_chr_avt_acc_sho_fashionBootsPurple</li><li>tt_t_chr_avt_acc_sho_fashionBootsPurpleLL</li><li>tt_t_chr_avt_acc_sho_hiTopSneakers</li><li>tt_t_chr_avt_acc_sho_hiTopSneakersPink</li><li>tt_t_chr_avt_acc_sho_loafers</li><li>tt_t_chr_avt_acc_sho_maryJaneShoes</li><li>tt_t_chr_avt_acc_sho_maryJaneShoesBrown</li><li>tt_t_chr_avt_acc_sho_maryJaneShoesPurple</li><li>tt_t_chr_avt_acc_sho_maryJaneShoesRed</li><li>tt_t_chr_avt_acc_sho_motorcycleBoots</li><li>tt_t_chr_avt_acc_sho_motorcycleBootsLL</li><li>tt_t_chr_avt_acc_sho_oxfords</li><li>tt_t_chr_avt_acc_sho_pirate</li><li>tt_t_chr_avt_acc_sho_pirateLL</li><li>tt_t_chr_avt_acc_sho_rainBootsBlue</li><li>tt_t_chr_avt_acc_sho_rainBootsBlueLL</li><li>tt_t_chr_avt_acc_sho_rainBootsPink</li><li>tt_t_chr_avt_acc_sho_rainBootsPinkLL</li><li>tt_t_chr_avt_acc_sho_rainBootsRedDots</li><li>tt_t_chr_avt_acc_sho_rainBootsRedDotsLL</li><li>tt_t_chr_avt_acc_sho_rainBootsYellow</li><li>tt_t_chr_avt_acc_sho_rainBootsYellowLL</li><li>tt_t_chr_avt_acc_sho_santaBoots</li><li>tt_t_chr_avt_acc_sho_santaBootsLL</li><li>tt_t_chr_avt_acc_sho_superToonRedBoots</li><li>tt_t_chr_avt_acc_sho_superToonRedBootsLL</li><li>tt_t_chr_avt_acc_sho_tennisShoesGreen</li><li>tt_t_chr_avt_acc_sho_tennisShoesPink</li><li>tt_t_chr_avt_acc_sho_tennisShoesPurple</li><li>tt_t_chr_avt_acc_sho_tennisShoesViolet</li><li>tt_t_chr_avt_acc_sho_tennisShoesYellow</li><li>tt_t_chr_avt_acc_sho_wingtips</li><li>tt_t_chr_avt_acc_sho_winterBootsBeige</li><li>tt_t_chr_avt_acc_sho_winterBootsBeigeLL</li><li>tt_t_chr_avt_acc_sho_winterBootsPink</li><li>tt_t_chr_avt_acc_sho_winterBootsPinkLL</li><li>tt_t_chr_avt_acc_sho_workBoots</li></ul></div>
+<div class="folder"><div class="path">phase_5.5/maps/</div><ul class="names"><li>tt_t_ara_est_accessoryTrunkBoy</li><li>tt_t_ara_est_accessoryTrunkGirl</li></ul></div>
+</details>
+</section>
+<section class="group" id="cogdominiums-and-field-offices" data-group>
+<h2>Cogdominiums and Field Offices</h2>
+<p class="blurb">The Cog buildings&#x27; interiors, elevator, minigames (barrels, maze, flying), penthouse and signs, with their sounds.</p>
+<details class="kind" data-kind open><summary><span class="kname">Models</span> <span class="kcount">36</span></summary>
+<div class="folder"><div class="path">phase_5/models/cogdominium/</div><ul class="names"><li>cogdominiumElevator</li><li>field_office_sign</li><li>tt_m_ara_cbe_fieldOfficeMoverShaker</li><li>tt_m_ara_cbe_walls</li><li>tt_m_ara_cbr_barrelRoom</li><li>tt_m_ara_cbr_laughBarrel</li><li>tt_m_ara_ccg_rooftop</li><li>tt_m_ara_ccg_safesA</li><li>tt_m_ara_cmg_cabinetSmFalling</li><li>tt_m_ara_cmg_grouping_blockerDivider</li><li>tt_m_ara_cmg_level</li><li>tt_m_ara_cmg_quadrant1</li><li>tt_m_ara_cmg_quadrant2</li><li>tt_m_ara_cmg_quadrant3</li><li>tt_m_ara_cmg_quadrant4</li><li>tt_m_ara_cmg_quadrant5</li><li>tt_m_ara_cmg_quadrant6</li><li>tt_m_ara_cmg_quadrant7</li><li>tt_m_ara_cmg_quadrant8</li><li>tt_m_ara_cmg_quadrant9</li><li>tt_m_ara_cmg_splash</li><li>tt_m_ara_cmg_waterBalloon</li><li>tt_m_ara_crg_goldTrophy</li><li>tt_m_ara_crg_paintingLegalEagle</li><li>tt_m_ara_crg_paintingMoverShaker</li><li>tt_m_ara_crg_penthouse</li><li>tt_m_ara_crg_silverTrophy</li><li>tt_m_ara_crg_toonCage</li><li>tt_m_ara_csa_elevatorB</li><li>tt_m_ara_csa_exitDoor</li><li>tt_m_ara_csa_memo</li><li>tt_m_gui_cmg_bossCog</li><li>tt_m_gui_cmg_miniMap_cards</li><li>tt_m_gui_csa_flyThru</li><li>tt_m_gui_csa_memo_card</li><li>tt_t_ara_cbr_laughBarrelUsed</li></ul></div>
+</details>
+<details class="kind" data-kind open><summary><span class="kname">Textures</span> <span class="kcount">43</span></summary>
+<div class="folder"><div class="path">phase_5/maps/</div><ul class="names"><li>cogdominiumElevator</li><li>tt_t_ara_cbr_Barrel_Used</li><li>tt_t_ara_cbr_Barrel_notUsed</li><li>tt_t_ara_cbr_battleArea</li><li>tt_t_ara_cbr_framework</li><li>tt_t_ara_cbr_steelWalls</li><li>tt_t_ara_cbr_stomper</li><li>tt_t_ara_ccg_floorCieling_deco</li><li>tt_t_ara_ccg_safesA</li><li>tt_t_ara_ccp_cloudSphere</li><li>tt_t_ara_cfg_boxStack_box_lightGray</li><li>tt_t_ara_cmg_wallBarrier</li><li>tt_t_ara_cmg_waterCooler</li><li>tt_t_ara_cpg_bossChair</li><li>tt_t_ara_cpg_bossDesk</li><li>tt_t_ara_cpg_chairSmall</li><li>tt_t_ara_cpg_counter</li><li>tt_t_ara_cpg_deskClockB</li><li>tt_t_ara_cpg_deskClock_alpha</li><li>tt_t_ara_cpg_floorLamp</li><li>tt_t_ara_cpg_hangingLight</li><li>tt_t_ara_cpg_lampA</li><li>tt_t_ara_cpg_lampB</li><li>tt_t_ara_cpg_machine1</li><li>tt_t_ara_cpg_machine3</li><li>tt_t_ara_cpg_radio</li><li>tt_t_ara_cpg_wallDetail</li><li>tt_t_ara_crg_bossChair</li><li>tt_t_ara_crg_bossDesk</li><li>tt_t_ara_crg_cloudCard2</li><li>tt_t_ara_crg_counterB</li><li>tt_t_ara_crg_floor</li><li>tt_t_ara_crg_machines</li><li>tt_t_ara_crg_toonCage</li><li>tt_t_ara_crg_trophyCase</li><li>tt_t_ara_crg_tubingAndCeilingWallDetail</li><li>tt_t_ara_crg_wallDetailC</li><li>tt_t_ara_csa_bookcase</li><li>tt_t_ara_csa_elevatorB</li><li>tt_t_ara_csa_lightbulbs</li><li>tt_t_ara_csa_memo</li><li>tt_t_ara_csa_paintingFrame</li><li>tt_t_gui_cmg_miniMap_frame</li></ul></div>
+</details>
+<details class="kind" data-kind open><summary><span class="kname">Sounds</span> <span class="kcount">13</span></summary>
+<div class="folder"><div class="path">phase_5/audio/sfx/</div><ul class="names"><li>tt_s_ara_cfg_eagleCry</li><li>tt_s_ara_cfg_propellerBreaks</li><li>tt_s_ara_cfg_propellers_damaged</li><li>tt_s_ara_cfg_toonFalls</li><li>tt_s_ara_cfg_toonHit</li><li>tt_s_ara_cfg_toonInWhirlwind</li><li>tt_s_ara_cfg_whirlwind</li><li>tt_s_ara_cmg_bossCogAngry</li><li>tt_s_ara_cmg_cogStomp</li><li>tt_s_ara_cmg_groundquake</li><li>tt_s_ara_cmg_itemHitsFloor</li><li>tt_s_ara_cmg_toonHit</li><li>tt_s_ara_cmg_waterCoolerFill</li></ul></div>
+</details>
+</section>
+<section class="group" id="silly-meter-and-the-ttc-scientists" data-group>
+<h2>Silly Meter and the TTC scientists</h2>
+<p class="blurb">The Silly Meter in Toontown Central, its signs and Toon HQ flats, the three Doodle scientists&#x27; clothes, animations and props, and the meter&#x27;s sounds.</p>
+<details class="kind" data-kind open><summary><span class="kname">Models</span> <span class="kcount">40</span></summary>
+<div class="folder"><div class="path">phase_3.5/models/modules/</div><ul class="names"><li>tt_m_ara_int_scientistDuckFlat</li><li>tt_m_ara_int_scientistHorseFlat</li><li>tt_m_ara_int_scientistMonkeyFlat</li><li>tt_m_ara_int_sillyMeterFlat</li></ul></div>
+<div class="folder"><div class="path">phase_4/models/char/</div><ul class="names"><li>scientist-clothes</li><li>tt_a_chr_dgl_shorts_head_scientistGame</li><li>tt_a_chr_dgl_shorts_head_scientistJealous</li><li>tt_a_chr_dgl_shorts_head_scientistWork</li><li>tt_a_chr_dgl_shorts_legs_scientistGame</li><li>tt_a_chr_dgl_shorts_legs_scientistJealous</li><li>tt_a_chr_dgl_shorts_legs_scientistWork</li><li>tt_a_chr_dgl_shorts_torso_scientistGame</li><li>tt_a_chr_dgl_shorts_torso_scientistJealous</li><li>tt_a_chr_dgl_shorts_torso_scientistWork</li><li>tt_a_chr_dgm_shorts_head_scientistEmcee</li><li>tt_a_chr_dgm_shorts_legs_scientistEmcee</li><li>tt_a_chr_dgm_shorts_torso_scientistEmcee</li><li>tt_a_chr_dgs_shorts_head_scientistGame</li><li>tt_a_chr_dgs_shorts_head_scientistJealous</li><li>tt_a_chr_dgs_shorts_head_scientistWork</li><li>tt_a_chr_dgs_shorts_legs_scientistGame</li><li>tt_a_chr_dgs_shorts_legs_scientistJealous</li><li>tt_a_chr_dgs_shorts_legs_scientistWork</li><li>tt_a_chr_dgs_shorts_torso_scientistGame</li><li>tt_a_chr_dgs_shorts_torso_scientistJealous</li><li>tt_a_chr_dgs_shorts_torso_scientistWork</li></ul></div>
+<div class="folder"><div class="path">phase_4/models/props/</div><ul class="names"><li>tt_a_ara_ttc_sillyMeter_arrowFluid</li><li>tt_a_ara_ttc_sillyMeter_default</li><li>tt_a_ara_ttc_sillyMeter_phaseFive</li><li>tt_a_ara_ttc_sillyMeter_phaseFour</li><li>tt_a_ara_ttc_sillyMeter_phaseFourToFive</li><li>tt_a_ara_ttc_sillyMeter_phaseOne</li><li>tt_a_ara_ttc_sillyMeter_phaseThree</li><li>tt_a_ara_ttc_sillyMeter_phaseTwo</li><li>tt_m_ara_gen_sillyMeterSign</li><li>tt_m_ara_ttc_sillyMeterSign_groupA</li><li>tt_m_ara_ttc_sillyMeterSign_groupB</li><li>tt_m_prp_acs_clipboard</li><li>tt_m_prp_acs_sillyReader</li></ul></div>
+<div class="folder"><div class="path">phase_8/models/props/</div><ul class="names"><li>tt_m_ara_ddl_sillyMeterSign</li></ul></div>
+</details>
+<details class="kind" data-kind open><summary><span class="kname">Textures</span> <span class="kcount">11</span></summary>
+<div class="folder"><div class="path">phase_4/maps/</div><ul class="names"><li>tt_t_ara_int_scientistDuckFlat</li><li>tt_t_ara_int_scientistHorseFlat</li><li>tt_t_ara_int_scientistMonkeyFlat</li><li>tt_t_ara_int_sillyMeterFlat</li><li>tt_t_ara_int_sillyMeterSign</li><li>tt_t_ara_ttc_progressBar</li><li>tt_t_ara_ttc_sillyMeter</li><li>tt_t_ara_ttc_sillyMeterSign</li><li>tt_t_ara_ttc_sillyMeterSign_groupMain</li><li>tt_t_ara_ttc_sillyMeterSign_groupPosts</li></ul></div>
+<div class="folder"><div class="path">phase_8/maps/</div><ul class="names"><li>tt_t_ara_ddl_sillyMeterSign</li></ul></div>
+</details>
+<details class="kind" data-kind open><summary><span class="kname">Sounds</span> <span class="kcount">7</span></summary>
+<div class="folder"><div class="path">phase_4/audio/sfx/</div><ul class="names"><li>tt_s_prp_sillyMeterArrow</li><li>tt_s_prp_sillyMeterPhaseFive</li><li>tt_s_prp_sillyMeterPhaseFour</li><li>tt_s_prp_sillyMeterPhaseFourToFive</li><li>tt_s_prp_sillyMeterPhaseOne</li><li>tt_s_prp_sillyMeterPhaseThree</li><li>tt_s_prp_sillyMeterPhaseTwo</li></ul></div>
+</details>
+</section>
+<section class="group" id="quest-maps" data-group>
+<h2>Quest maps</h2>
+<p class="blurb">The street maps in the Shticker Book quest pages, and the quest arrow.</p>
+<details class="kind" data-kind open><summary><span class="kname">Models</span> <span class="kcount">7</span></summary>
+<div class="folder"><div class="path">phase_4/models/questmap/</div><ul class="names"><li>daisys_garden_maps</li><li>donalds_dock_maps</li><li>donalds_dreamland_maps</li><li>minnies_melody_land_maps</li><li>questmap_gui</li><li>the_burrrgh_maps</li><li>toontown_central_maps</li></ul></div>
+</details>
+<details class="kind" data-kind open><summary><span class="kname">Textures</span> <span class="kcount">1</span></summary>
+<div class="folder"><div class="path">phase_4/maps/</div><ul class="names"><li>tt_t_gui_qst_arrow</li></ul></div>
+</details>
+</section>
+<section class="group" id="gui-and-shticker-book" data-group>
+<h2>GUI and Shticker Book</h2>
+<p class="blurb">Late Shticker Book and news pages, code redemption, emblems, Toon Resistance and ToonTroop icons, loading pop-up, error image.</p>
+<details class="kind" data-kind open><summary><span class="kname">Models</span> <span class="kcount">10</span></summary>
+<div class="folder"><div class="path">phase_13/models/parties/</div><ul class="names"><li>tt_m_gui_pty_pieToss_balanceBar</li><li>tt_m_gui_pty_pieToss_controls</li></ul></div>
+<div class="folder"><div class="path">phase_3.5/models/gui/</div><ul class="names"><li>tt_m_gui_gen_emblemIcons</li><li>tt_m_gui_gm_toonResistance_fist</li><li>tt_m_gui_gm_toontroop_getConnected</li><li>tt_m_gui_gm_toontroop_whistle</li><li>tt_m_gui_ign_directNewsGuiNavV2</li><li>tt_m_gui_ign_newsStatusBackground</li><li>tt_m_gui_ign_shtickerBook</li><li>tt_m_gui_sbk_codeRedemptionGui</li></ul></div>
+</details>
+<details class="kind" data-kind open><summary><span class="kname">Textures</span> <span class="kcount">6</span></summary>
+<div class="folder"><div class="path">phase_13/maps/</div><ul class="names"><li>tt_t_gui_pty_pieToss_balanceBarBG</li></ul></div>
+<div class="folder"><div class="path">phase_3.5/maps/</div><ul class="names"><li>tt_i_art_err1</li><li>tt_t_gui_sbk_cdrResultPanel_success</li><li>tt_t_gui_sbk_newsPageTab</li></ul></div>
+<div class="folder"><div class="path">phase_3/maps/</div><ul class="names"><li>HastyPudding_1</li><li>tt_t_gui_pat_loadingPopup</li></ul></div>
+</details>
+<details class="kind" data-kind open><summary><span class="kname">Sounds</span> <span class="kcount">2</span></summary>
+<div class="folder"><div class="path">phase_3.5/audio/sfx/</div><ul class="names"><li>tt_s_gui_sbk_cdrFailure</li><li>tt_s_gui_sbk_cdrSuccess</li></ul></div>
+</details>
+</section>
+<section class="group" id="parties" data-group>
+<h2>Parties</h2>
+<p class="blurb">Party pieces that aren&#x27;t holiday versions: the hydra (dance anims), the props-show dance, the cannon confetti and prop stage textures (the pie-toss GUI is under GUI).</p>
+<details class="kind" data-kind open><summary><span class="kname">Models</span> <span class="kcount">3</span></summary>
+<div class="folder"><div class="path">phase_13/models/parties/</div><ul class="names"><li>tt_a_ara_pty_hydra_dance</li><li>tt_a_ara_pty_hydra_default</li><li>tt_a_ara_pty_propsShow_dance</li></ul></div>
+</details>
+<details class="kind" data-kind open><summary><span class="kname">Textures</span> <span class="kcount">2</span></summary>
+<div class="folder"><div class="path">phase_13/maps/</div><ul class="names"><li>tt_t_ara_pty_cannonConfetti</li><li>tt_t_ara_pty_propStage</li></ul></div>
+</details>
+<details class="kind" data-kind open><summary><span class="kname">Sounds</span> <span class="kcount">1</span></summary>
+<div class="folder"><div class="path">phase_13/audio/sfx/</div><ul class="names"><li>tt_s_ara_pty_propsShow_dance</li></ul></div>
+</details>
+</section>
+<section class="group" id="cog-suits" data-group>
+<h2>Cog suits</h2>
+<p class="blurb">The combined suits model, the Sellbot rental suit and its textures, the four department textures.</p>
+<details class="kind" data-kind open><summary><span class="kname">Models</span> <span class="kcount">2</span></summary>
+<div class="folder"><div class="path">phase_3.5/models/char/</div><ul class="names"><li>suits</li><li>tt_m_ene_sellbotRental</li></ul></div>
+</details>
+<details class="kind" data-kind open><summary><span class="kname">Textures</span> <span class="kcount">10</span></summary>
+<div class="folder"><div class="path">phase_3.5/maps/</div><ul class="names"><li>tt_t_ene_bossbot</li><li>tt_t_ene_cashbot</li><li>tt_t_ene_lawbot</li><li>tt_t_ene_sellbot</li><li>tt_t_ene_sellbotRental_arm</li><li>tt_t_ene_sellbotRental_blazer</li><li>tt_t_ene_sellbotRental_hand</li><li>tt_t_ene_sellbotRental_leg</li><li>tt_t_ene_sellbotRental_shoe</li><li>tt_t_ene_sellbotRental_sleeve</li></ul></div>
+</details>
+</section>
+<section class="group" id="late-clothing" data-group>
+<h2>Late clothing</h2>
+<p class="blurb">Shirt, sleeve, shorts and skirt textures added late: award and event clothes (fishing, racing, golf, most Cogs defeated, buildings saved, Loony Labs, ...). The clothes use the existing toon models.</p>
+<details class="kind" data-kind ><summary><span class="kname">Textures</span> <span class="kcount">95</span></summary>
+<div class="folder"><div class="path">phase_4/maps/</div><ul class="names"><li>tt_t_chr_avt_shirtSleeve_anniversary</li><li>tt_t_chr_avt_shirtSleeve_bee</li><li>tt_t_chr_avt_shirtSleeve_cogbuster</li><li>tt_t_chr_avt_shirtSleeve_dinosaur</li><li>tt_t_chr_avt_shirtSleeve_doodle</li><li>tt_t_chr_avt_shirtSleeve_fishing04</li><li>tt_t_chr_avt_shirtSleeve_fishing05</li><li>tt_t_chr_avt_shirtSleeve_fishing06</li><li>tt_t_chr_avt_shirtSleeve_fishing07</li><li>tt_t_chr_avt_shirtSleeve_getConnectedMoverShaker</li><li>tt_t_chr_avt_shirtSleeve_golf03</li><li>tt_t_chr_avt_shirtSleeve_golf04</li><li>tt_t_chr_avt_shirtSleeve_golf05</li><li>tt_t_chr_avt_shirtSleeve_greentoon1</li><li>tt_t_chr_avt_shirtSleeve_jellyBeans</li><li>tt_t_chr_avt_shirtSleeve_loonyLabs</li><li>tt_t_chr_avt_shirtSleeve_mostCogsDefeated01</li><li>tt_t_chr_avt_shirtSleeve_mostCogsDefeated02</li><li>tt_t_chr_avt_shirtSleeve_mostCogsDefeated03</li><li>tt_t_chr_avt_shirtSleeve_mostCogsDefeated04</li><li>tt_t_chr_avt_shirtSleeve_pirate</li><li>tt_t_chr_avt_shirtSleeve_racing03</li><li>tt_t_chr_avt_shirtSleeve_racing04</li><li>tt_t_chr_avt_shirtSleeve_racing05</li><li>tt_t_chr_avt_shirtSleeve_racingGrandPrix</li><li>tt_t_chr_avt_shirtSleeve_saveBuilding05</li><li>tt_t_chr_avt_shirtSleeve_saveBuilding3</li><li>tt_t_chr_avt_shirtSleeve_saveBuilding4</li><li>tt_t_chr_avt_shirtSleeve_sellbotCrusher</li><li>tt_t_chr_avt_shirtSleeve_sellbotIcon</li><li>tt_t_chr_avt_shirtSleeve_sellbotVPIcon</li><li>tt_t_chr_avt_shirtSleeve_supertoon</li><li>tt_t_chr_avt_shirtSleeve_trolley03</li><li>tt_t_chr_avt_shirtSleeve_trolley04</li><li>tt_t_chr_avt_shirtSleeve_trolley05</li><li>tt_t_chr_avt_shirtSleeve_whistle</li><li>tt_t_chr_avt_shirt_anniversary</li><li>tt_t_chr_avt_shirt_bee</li><li>tt_t_chr_avt_shirt_cogbuster</li><li>tt_t_chr_avt_shirt_dinosaur</li><li>tt_t_chr_avt_shirt_doodle</li><li>tt_t_chr_avt_shirt_fishing04</li><li>tt_t_chr_avt_shirt_fishing05</li><li>tt_t_chr_avt_shirt_fishing06</li><li>tt_t_chr_avt_shirt_fishing07</li><li>tt_t_chr_avt_shirt_getConnectedMoverShaker</li><li>tt_t_chr_avt_shirt_golf03</li><li>tt_t_chr_avt_shirt_golf04</li><li>tt_t_chr_avt_shirt_golf05</li><li>tt_t_chr_avt_shirt_greentoon1</li><li>tt_t_chr_avt_shirt_jellyBeans</li><li>tt_t_chr_avt_shirt_loonyLabs</li><li>tt_t_chr_avt_shirt_mostCogsDefeated01</li><li>tt_t_chr_avt_shirt_mostCogsDefeated02</li><li>tt_t_chr_avt_shirt_mostCogsDefeated03</li><li>tt_t_chr_avt_shirt_mostCogsDefeated04</li><li>tt_t_chr_avt_shirt_pirate</li><li>tt_t_chr_avt_shirt_racing03</li><li>tt_t_chr_avt_shirt_racing04</li><li>tt_t_chr_avt_shirt_racing05</li><li>tt_t_chr_avt_shirt_racingGrandPrix</li><li>tt_t_chr_avt_shirt_saveBuilding05</li><li>tt_t_chr_avt_shirt_saveBuilding3</li><li>tt_t_chr_avt_shirt_saveBuilding4</li><li>tt_t_chr_avt_shirt_sellbotCrusher</li><li>tt_t_chr_avt_shirt_sellbotIcon</li><li>tt_t_chr_avt_shirt_sellbotVPIcon</li><li>tt_t_chr_avt_shirt_supertoon</li><li>tt_t_chr_avt_shirt_trolley03</li><li>tt_t_chr_avt_shirt_trolley04</li><li>tt_t_chr_avt_shirt_trolley05</li><li>tt_t_chr_avt_shirt_whistle</li><li>tt_t_chr_avt_shorts_bee</li><li>tt_t_chr_avt_shorts_cogbuster</li><li>tt_t_chr_avt_shorts_dinosaur</li><li>tt_t_chr_avt_shorts_golf03</li><li>tt_t_chr_avt_shorts_golf04</li><li>tt_t_chr_avt_shorts_golf05</li><li>tt_t_chr_avt_shorts_greentoon1</li><li>tt_t_chr_avt_shorts_pirate</li><li>tt_t_chr_avt_shorts_racing03</li><li>tt_t_chr_avt_shorts_racing04</li><li>tt_t_chr_avt_shorts_racing05</li><li>tt_t_chr_avt_shorts_racingGrandPrix</li><li>tt_t_chr_avt_shorts_sellbotCrusher</li><li>tt_t_chr_avt_shorts_supertoon</li><li>tt_t_chr_avt_skirt_golf02</li><li>tt_t_chr_avt_skirt_golf03</li><li>tt_t_chr_avt_skirt_golf04</li><li>tt_t_chr_avt_skirt_greentoon1</li><li>tt_t_chr_avt_skirt_pirate</li><li>tt_t_chr_avt_skirt_racing03</li><li>tt_t_chr_avt_skirt_racing04</li><li>tt_t_chr_avt_skirt_racing05</li><li>tt_t_chr_avt_skirt_racingGrandPrix</li></ul></div>
+</details>
+</section>
+<section class="group" id="playground-and-building-updates" data-group>
+<h2>Playground and building updates</h2>
+<p class="blurb">Late replacements of existing pieces: Donald&#x27;s Dock HQ, the Daisy Gardens fountain, the pet shop doodle silhouette, gag-shop wall flats, Bossbot HQ&#x27;s seltzer bottle, Toon HQ ropes, the tunnel-ahead and fore signs.</p>
+<details class="kind" data-kind open><summary><span class="kname">Models</span> <span class="kcount">8</span></summary>
+<div class="folder"><div class="path">phase_12/models/bossbotHQ/</div><ul class="names"><li>tt_m_ara_bhq_seltzerBottle</li></ul></div>
+<div class="folder"><div class="path">phase_4/models/modules/</div><ul class="names"><li>tt_m_ara_int_ropes</li></ul></div>
+<div class="folder"><div class="path">phase_4/models/props/</div><ul class="names"><li>tt_m_ara_gen_foreSign</li><li>tt_m_ara_gen_tunnelAheadSign</li></ul></div>
+<div class="folder"><div class="path">phase_6/models/modules/</div><ul class="names"><li>tt_m_ara_dod_SZ_hq</li><li>tt_m_ara_dod_hq</li></ul></div>
+<div class="folder"><div class="path">phase_8/models/props/</div><ul class="names"><li>tt_m_ara_ddl_foreSign</li><li>tt_m_ara_dga_fountain</li></ul></div>
+</details>
+<details class="kind" data-kind open><summary><span class="kname">Textures</span> <span class="kcount">13</span></summary>
+<div class="folder"><div class="path">phase_4/maps/</div><ul class="names"><li>tt_t_ara_gen_foreSign</li><li>tt_t_ara_gen_tunnelAheadSign</li><li>tt_t_ara_int_gagAnvil</li><li>tt_t_ara_int_gagBananaPeel</li><li>tt_t_ara_int_gagBikeHorn</li><li>tt_t_ara_int_gagCreamPie</li><li>tt_t_ara_int_gagLipStick</li><li>tt_t_ara_int_gagMagnet</li><li>tt_t_ara_int_gagTNT</li><li>tt_t_ara_int_gagWaterGlass</li><li>tt_t_ara_int_officeSign</li></ul></div>
+<div class="folder"><div class="path">phase_8/maps/</div><ul class="names"><li>tt_t_ara_ddl_foreSign</li><li>tt_t_ara_dga_petShop_doodleSilhouette</li></ul></div>
+</details>
+</section>
+    <details class="seasonal-wrap" id="seasonal-wrap">
+      <summary>Seasonal and holiday content (not needed yet)</summary>
+<section class="group" id="seasonal" data-group>
+<h2>Seasonal and holiday content</h2>
+<p class="blurb">Holiday and event versions: the interactive hydrants, mailboxes and trash cans (they only move during their holidays), Victory, Winter, Valentine, Summer and Halloween props, costume characters and event signs. Not needed for now, but welcome.</p>
+<details class="kind" data-kind ><summary><span class="kname">Models</span> <span class="kcount">301</span></summary>
+<div class="folder"><div class="path">phase_13/models/parties/</div><ul class="names"><li>tt_m_ara_pty_bannerVictory</li><li>tt_m_ara_pty_bannerVictory_model</li><li>tt_m_ara_pty_cannonVictory</li><li>tt_m_ara_pty_cannonVictory_model</li><li>tt_m_ara_pty_cogDoodleVictory</li><li>tt_m_ara_pty_cogDoodleWinter</li><li>tt_m_ara_pty_cogIceCreamVictory</li><li>tt_m_ara_pty_cogIceCreamWinter</li><li>tt_m_ara_pty_cogPieArenaWinter</li><li>tt_m_ara_pty_danceFloorValentine</li><li>tt_m_ara_pty_hydrantWinter</li><li>tt_m_ara_pty_mailboxWinter</li><li>tt_m_ara_pty_partyCatchTreeWinter</li><li>tt_m_ara_pty_propStageWinter</li><li>tt_m_ara_pty_trashcanWinter</li><li>tt_m_ara_pty_winterPresent</li><li>tt_r_ara_pty_winterProps</li></ul></div>
+<div class="folder"><div class="path">phase_3.5/models/char/</div><ul class="names"><li>tt_a_chr_csc_witchMinnie_neutral</li><li>tt_a_chr_csc_witchMinnie_wait</li><li>tt_a_chr_csc_witchMinnie_walkDainty</li></ul></div>
+<div class="folder"><div class="path">phase_4/models/char/</div><ul class="names"><li>halloween-2011-clothes</li><li>tt_a_chr_csc_daisyCostume_default</li><li>tt_a_chr_csc_daisyCostume_idle</li><li>tt_a_chr_csc_daisyCostume_walk</li></ul></div>
+<div class="folder"><div class="path">phase_4/models/props/</div><ul class="names"><li>tt_m_ara_gen_jellybeanJamSign</li><li>tt_m_ara_gen_stormSellbotSign</li><li>tt_m_ara_gen_trickOrTreatSign</li><li>tt_m_ara_gen_victoryPartySign</li><li>tt_m_ara_gen_victorySoonSign</li><li>tt_m_efx_snowmanHead_short</li><li>tt_m_efx_snowmanHead_tall</li></ul></div>
+<div class="folder"><div class="path">phase_5.5/models/estate/</div><ul class="names"><li>tt_a_ara_pty_tubeCogVictory_default</li><li>tt_a_ara_pty_tubeCogVictory_wave</li><li>tt_m_prp_ext_snowDoodle</li><li>tt_m_prp_ext_snowDoodle_icon</li></ul></div>
+<div class="folder"><div class="path">phase_5/models/char/</div><ul class="names"><li>tt_a_ara_ttc_hydrant_fightBoost</li><li>tt_a_ara_ttc_hydrant_fightCheer</li><li>tt_a_ara_ttc_hydrant_fightIdle</li><li>tt_a_ara_ttc_hydrant_fightIntoIdle</li><li>tt_a_ara_ttc_hydrant_fightSad</li><li>tt_a_ara_ttc_hydrant_firstMoveArmUp1</li><li>tt_a_ara_ttc_hydrant_firstMoveArmUp2</li><li>tt_a_ara_ttc_hydrant_firstMoveArmUp3</li><li>tt_a_ara_ttc_hydrant_firstMoveIntoSleep</li><li>tt_a_ara_ttc_hydrant_firstMoveJump</li><li>tt_a_ara_ttc_hydrant_firstMoveJumpBalance</li><li>tt_a_ara_ttc_hydrant_firstMoveJumpSpin</li><li>tt_a_ara_ttc_hydrant_firstMoveOutOfSleep</li><li>tt_a_ara_ttc_hydrant_firstMoveSleepIdle</li><li>tt_a_ara_ttc_hydrant_firstMoveStruggle</li><li>tt_a_ara_ttc_hydrant_idle0</li><li>tt_a_ara_ttc_hydrant_idle1</li><li>tt_a_ara_ttc_hydrant_idle2</li><li>tt_a_ara_ttc_hydrant_idleAwesome3</li><li>tt_a_ara_ttc_hydrant_idleIntoFight</li><li>tt_a_ara_ttc_hydrant_victoryDance</li><li>tt_a_ara_ttc_mailbox_fightBoost</li><li>tt_a_ara_ttc_mailbox_fightCheer</li><li>tt_a_ara_ttc_mailbox_fightIdle</li><li>tt_a_ara_ttc_mailbox_fightIntoIdle</li><li>tt_a_ara_ttc_mailbox_fightSad</li><li>tt_a_ara_ttc_mailbox_idle0</li><li>tt_a_ara_ttc_mailbox_idle0settle</li><li>tt_a_ara_ttc_mailbox_idleAwesome3</li><li>tt_a_ara_ttc_mailbox_idleIntoFight</li><li>tt_a_ara_ttc_mailbox_idleLook1</li><li>tt_a_ara_ttc_mailbox_idleTake2</li><li>tt_a_ara_ttc_mailbox_victoryDance</li><li>tt_a_ara_ttc_trashcan_fightBoost</li><li>tt_a_ara_ttc_trashcan_fightCheer</li><li>tt_a_ara_ttc_trashcan_fightIdle</li><li>tt_a_ara_ttc_trashcan_fightIntoIdle</li><li>tt_a_ara_ttc_trashcan_fightSad</li><li>tt_a_ara_ttc_trashcan_idleAwesome3</li><li>tt_a_ara_ttc_trashcan_idleHiccup0</li><li>tt_a_ara_ttc_trashcan_idleIntoFight</li><li>tt_a_ara_ttc_trashcan_idleLook1</li><li>tt_a_ara_ttc_trashcan_idleTake2</li><li>tt_a_ara_ttc_trashcan_victoryDance</li><li>tt_a_prp_ext_piePackage_fightBoost</li><li>tt_m_efx_hydrantSquirt</li><li>tt_r_ara_ttc_hydrant</li><li>tt_r_ara_ttc_mailbox</li><li>tt_r_ara_ttc_trashcan</li><li>tt_r_prp_ext_piePackage</li></ul></div>
+<div class="folder"><div class="path">phase_6/models/char/</div><ul class="names"><li>tt_a_ara_dod_mailbox_fightBoost</li><li>tt_a_ara_dod_mailbox_fightCheer</li><li>tt_a_ara_dod_mailbox_fightIdle</li><li>tt_a_ara_dod_mailbox_fightIntoIdle</li><li>tt_a_ara_dod_mailbox_fightSad</li><li>tt_a_ara_dod_mailbox_firstMoveFlagSpin1</li><li>tt_a_ara_dod_mailbox_firstMoveFlagSpin2</li><li>tt_a_ara_dod_mailbox_firstMoveFlagSpin3</li><li>tt_a_ara_dod_mailbox_firstMoveIntoSleep</li><li>tt_a_ara_dod_mailbox_firstMoveJump</li><li>tt_a_ara_dod_mailbox_firstMoveJump3Summersaults</li><li>tt_a_ara_dod_mailbox_firstMoveJumpFall</li><li>tt_a_ara_dod_mailbox_firstMoveJumpSummersault</li><li>tt_a_ara_dod_mailbox_firstMoveOutOfSleep</li><li>tt_a_ara_dod_mailbox_firstMoveSleepIdle</li><li>tt_a_ara_dod_mailbox_firstMoveStruggle</li><li>tt_a_ara_dod_mailbox_idle0</li><li>tt_a_ara_dod_mailbox_idle0settle</li><li>tt_a_ara_dod_mailbox_idle1</li><li>tt_a_ara_dod_mailbox_idle2</li><li>tt_a_ara_dod_mailbox_idleAwesome3</li><li>tt_a_ara_dod_mailbox_idleIntoFight</li><li>tt_a_ara_dod_mailbox_victoryDance</li><li>tt_a_ara_dod_trashcan_fightBoost</li><li>tt_a_ara_dod_trashcan_fightCheer</li><li>tt_a_ara_dod_trashcan_fightIdle</li><li>tt_a_ara_dod_trashcan_fightIntoIdle</li><li>tt_a_ara_dod_trashcan_fightSad</li><li>tt_a_ara_dod_trashcan_idle0</li><li>tt_a_ara_dod_trashcan_idle0settle</li><li>tt_a_ara_dod_trashcan_idle1</li><li>tt_a_ara_dod_trashcan_idleAwesome3</li><li>tt_a_ara_dod_trashcan_idleBounce2</li><li>tt_a_ara_dod_trashcan_idleIntoFight</li><li>tt_a_ara_dod_trashcan_victoryDance</li><li>tt_a_ara_mml_hydrant_fightBoost</li><li>tt_a_ara_mml_hydrant_fightCheer</li><li>tt_a_ara_mml_hydrant_fightIdle</li><li>tt_a_ara_mml_hydrant_fightIntoIdle</li><li>tt_a_ara_mml_hydrant_fightSad</li><li>tt_a_ara_mml_hydrant_idle0</li><li>tt_a_ara_mml_hydrant_idle0settle</li><li>tt_a_ara_mml_hydrant_idle1</li><li>tt_a_ara_mml_hydrant_idle1settle</li><li>tt_a_ara_mml_hydrant_idle2</li><li>tt_a_ara_mml_hydrant_idle2settle</li><li>tt_a_ara_mml_hydrant_idleAwesome3</li><li>tt_a_ara_mml_hydrant_idleIntoFight</li><li>tt_a_ara_mml_hydrant_victoryDance</li><li>tt_a_ara_mml_mailbox_fightBoost</li><li>tt_a_ara_mml_mailbox_fightCheer</li><li>tt_a_ara_mml_mailbox_fightIdle</li><li>tt_a_ara_mml_mailbox_fightIntoIdle</li><li>tt_a_ara_mml_mailbox_fightSad</li><li>tt_a_ara_mml_mailbox_idle0</li><li>tt_a_ara_mml_mailbox_idle0settle</li><li>tt_a_ara_mml_mailbox_idleAwesome3</li><li>tt_a_ara_mml_mailbox_idleIntoFight</li><li>tt_a_ara_mml_mailbox_idleLook2</li><li>tt_a_ara_mml_mailbox_idleTake1</li><li>tt_a_ara_mml_mailbox_victoryDance</li><li>tt_a_ara_mml_trashcan_fightBoost</li><li>tt_a_ara_mml_trashcan_fightCheer0</li><li>tt_a_ara_mml_trashcan_fightCheer1</li><li>tt_a_ara_mml_trashcan_fightIdle</li><li>tt_a_ara_mml_trashcan_fightIntoIdle</li><li>tt_a_ara_mml_trashcan_fightSad</li><li>tt_a_ara_mml_trashcan_idle0settle</li><li>tt_a_ara_mml_trashcan_idleAwesome3</li><li>tt_a_ara_mml_trashcan_idleBounce0</li><li>tt_a_ara_mml_trashcan_idleHelicopter2</li><li>tt_a_ara_mml_trashcan_idleIntoFight</li><li>tt_a_ara_mml_trashcan_idleLook1</li><li>tt_a_ara_mml_trashcan_victoryDance</li><li>tt_a_chr_csc_chipCostume_default</li><li>tt_a_chr_csc_chipCostume_idle</li><li>tt_a_chr_csc_chipCostume_walk</li><li>tt_a_chr_csc_daleCostume_default</li><li>tt_a_chr_csc_daleCostume_idle</li><li>tt_a_chr_csc_daleCostume_walk</li><li>tt_a_chr_csc_donaldCostume_default</li><li>tt_a_chr_csc_donaldCostume_idle</li><li>tt_a_chr_csc_donaldCostume_walk</li><li>tt_r_ara_dod_mailbox</li><li>tt_r_ara_dod_trashcan</li><li>tt_r_ara_mml_hydrant</li><li>tt_r_ara_mml_mailbox</li><li>tt_r_ara_mml_trashcan</li></ul></div>
+<div class="folder"><div class="path">phase_8/models/char/</div><ul class="names"><li>tt_a_ara_ddl_hydrant_fightBoost</li><li>tt_a_ara_ddl_hydrant_fightCheer</li><li>tt_a_ara_ddl_hydrant_fightIdle</li><li>tt_a_ara_ddl_hydrant_fightIntoIdle</li><li>tt_a_ara_ddl_hydrant_fightSad</li><li>tt_a_ara_ddl_hydrant_idle0</li><li>tt_a_ara_ddl_hydrant_idle1</li><li>tt_a_ara_ddl_hydrant_idle2</li><li>tt_a_ara_ddl_hydrant_idleAwesome3</li><li>tt_a_ara_ddl_hydrant_idleIntoFight</li><li>tt_a_ara_ddl_hydrant_victoryDance</li><li>tt_a_ara_ddl_mailbox_fightBoost</li><li>tt_a_ara_ddl_mailbox_fightCheer</li><li>tt_a_ara_ddl_mailbox_fightIdle</li><li>tt_a_ara_ddl_mailbox_fightIntoIdle</li><li>tt_a_ara_ddl_mailbox_fightSad</li><li>tt_a_ara_ddl_mailbox_idleAwesome3</li><li>tt_a_ara_ddl_mailbox_idleIntoFight</li><li>tt_a_ara_ddl_mailbox_idleShake2</li><li>tt_a_ara_ddl_mailbox_idleSleep0</li><li>tt_a_ara_ddl_mailbox_idleSnore1</li><li>tt_a_ara_ddl_mailbox_victoryDance</li><li>tt_a_ara_ddl_piePackage_fightBoost</li><li>tt_a_ara_ddl_trashcan_fightBoost</li><li>tt_a_ara_ddl_trashcan_fightCheer</li><li>tt_a_ara_ddl_trashcan_fightIdle</li><li>tt_a_ara_ddl_trashcan_fightIntoIdle</li><li>tt_a_ara_ddl_trashcan_fightSad</li><li>tt_a_ara_ddl_trashcan_idleAwesome3</li><li>tt_a_ara_ddl_trashcan_idleIntoFight</li><li>tt_a_ara_ddl_trashcan_idleShake2</li><li>tt_a_ara_ddl_trashcan_idleSleep0</li><li>tt_a_ara_ddl_trashcan_idleSnore1</li><li>tt_a_ara_ddl_trashcan_victoryDance</li><li>tt_a_ara_dga_hydrant_fightBoost</li><li>tt_a_ara_dga_hydrant_fightCheer</li><li>tt_a_ara_dga_hydrant_fightIdle</li><li>tt_a_ara_dga_hydrant_fightIntoIdle</li><li>tt_a_ara_dga_hydrant_fightSad</li><li>tt_a_ara_dga_hydrant_idle0</li><li>tt_a_ara_dga_hydrant_idle0settle</li><li>tt_a_ara_dga_hydrant_idleAwesome3</li><li>tt_a_ara_dga_hydrant_idleIntoFight</li><li>tt_a_ara_dga_hydrant_idleLook1</li><li>tt_a_ara_dga_hydrant_idleSneeze2</li><li>tt_a_ara_dga_hydrant_victoryDance</li><li>tt_a_ara_dga_mailbox_fightBoost</li><li>tt_a_ara_dga_mailbox_fightCheer</li><li>tt_a_ara_dga_mailbox_fightIdle</li><li>tt_a_ara_dga_mailbox_fightIntoIdle</li><li>tt_a_ara_dga_mailbox_fightSad</li><li>tt_a_ara_dga_mailbox_idle0</li><li>tt_a_ara_dga_mailbox_idle0settle</li><li>tt_a_ara_dga_mailbox_idleAwesome3</li><li>tt_a_ara_dga_mailbox_idleIntoFight</li><li>tt_a_ara_dga_mailbox_idleLook2</li><li>tt_a_ara_dga_mailbox_idleTake1</li><li>tt_a_ara_dga_mailbox_victoryDance</li><li>tt_a_ara_dga_trashcan_fightBoost</li><li>tt_a_ara_dga_trashcan_fightCheer</li><li>tt_a_ara_dga_trashcan_fightIdle</li><li>tt_a_ara_dga_trashcan_fightIntoIdle</li><li>tt_a_ara_dga_trashcan_fightSad</li><li>tt_a_ara_dga_trashcan_firstMoveIntoSleep</li><li>tt_a_ara_dga_trashcan_firstMoveJump</li><li>tt_a_ara_dga_trashcan_firstMoveJumpHit</li><li>tt_a_ara_dga_trashcan_firstMoveJumpJuggle</li><li>tt_a_ara_dga_trashcan_firstMoveLidFlip1</li><li>tt_a_ara_dga_trashcan_firstMoveLidFlip2</li><li>tt_a_ara_dga_trashcan_firstMoveLidFlip3</li><li>tt_a_ara_dga_trashcan_firstMoveOutOfSleep</li><li>tt_a_ara_dga_trashcan_firstMoveSleepIdle</li><li>tt_a_ara_dga_trashcan_firstMoveStruggle</li><li>tt_a_ara_dga_trashcan_idleAwesome3</li><li>tt_a_ara_dga_trashcan_idleHiccup0</li><li>tt_a_ara_dga_trashcan_idleIntoFight</li><li>tt_a_ara_dga_trashcan_idleLook1</li><li>tt_a_ara_dga_trashcan_idleTake2</li><li>tt_a_ara_dga_trashcan_victoryDance</li><li>tt_a_ara_tbr_hydrant_fightBoost</li><li>tt_a_ara_tbr_hydrant_fightCheer</li><li>tt_a_ara_tbr_hydrant_fightIdle</li><li>tt_a_ara_tbr_hydrant_fightIntoIdle</li><li>tt_a_ara_tbr_hydrant_fightSad</li><li>tt_a_ara_tbr_hydrant_idleAwesome3</li><li>tt_a_ara_tbr_hydrant_idleIntoFight</li><li>tt_a_ara_tbr_hydrant_idleRubNose0</li><li>tt_a_ara_tbr_hydrant_idleShiver1</li><li>tt_a_ara_tbr_hydrant_idleSneeze2</li><li>tt_a_ara_tbr_hydrant_victoryDance</li><li>tt_a_ara_tbr_mailbox_fightBoost</li><li>tt_a_ara_tbr_mailbox_fightCheer</li><li>tt_a_ara_tbr_mailbox_fightIdle</li><li>tt_a_ara_tbr_mailbox_fightIntoIdle</li><li>tt_a_ara_tbr_mailbox_fightSad</li><li>tt_a_ara_tbr_mailbox_idle0</li><li>tt_a_ara_tbr_mailbox_idleAwesome3</li><li>tt_a_ara_tbr_mailbox_idleIntoFight</li><li>tt_a_ara_tbr_mailbox_idleShiver1</li><li>tt_a_ara_tbr_mailbox_idleSneeze2</li><li>tt_a_ara_tbr_mailbox_idleSpin0</li><li>tt_a_ara_tbr_mailbox_victoryDance</li><li>tt_a_ara_tbr_trashcan_fightBoost</li><li>tt_a_ara_tbr_trashcan_fightCheer</li><li>tt_a_ara_tbr_trashcan_fightIdle</li><li>tt_a_ara_tbr_trashcan_fightIntoIdle</li><li>tt_a_ara_tbr_trashcan_fightSad</li><li>tt_a_ara_tbr_trashcan_fightShiver</li><li>tt_a_ara_tbr_trashcan_idle0</li><li>tt_a_ara_tbr_trashcan_idleAwesome3</li><li>tt_a_ara_tbr_trashcan_idleIntoFight</li><li>tt_a_ara_tbr_trashcan_idleShiver1</li><li>tt_a_ara_tbr_trashcan_idleSneeze2</li><li>tt_a_ara_tbr_trashcan_victoryDance</li><li>tt_r_ara_ddl_hydrant</li><li>tt_r_ara_ddl_mailbox</li><li>tt_r_ara_ddl_trashcan</li><li>tt_r_ara_dga_hydrant</li><li>tt_r_ara_dga_mailbox</li><li>tt_r_ara_dga_trashcan</li><li>tt_r_ara_tbr_hydrant</li><li>tt_r_ara_tbr_mailbox</li><li>tt_r_ara_tbr_trashcan</li></ul></div>
+<div class="folder"><div class="path">phase_8/models/props/</div><ul class="names"><li>tt_m_ara_ddl_jellybeanJamSign</li><li>tt_m_ara_ddl_stormSellbotSign</li><li>tt_m_ara_ddl_trickOrTreatSign</li><li>tt_m_ara_ddl_victoryPartySign</li><li>tt_m_ara_ddl_victorySoonSign</li></ul></div>
+</details>
+<details class="kind" data-kind ><summary><span class="kname">Textures</span> <span class="kcount">84</span></summary>
+<div class="folder"><div class="path">phase_13/maps/</div><ul class="names"><li>tt_t_ara_pty_cannonBalloonsVictory</li><li>tt_t_ara_pty_cannonVictory</li><li>tt_t_ara_pty_cogDoodleVictory</li><li>tt_t_ara_pty_cogDoodleWinter</li><li>tt_t_ara_pty_cogIceCreamVictory</li><li>tt_t_ara_pty_cogIceCreamWinter</li><li>tt_t_ara_pty_cogPieArenaWinter</li><li>tt_t_ara_pty_danceFloorValentine</li><li>tt_t_ara_pty_hydrantSummer</li><li>tt_t_ara_pty_hydrantWinter</li><li>tt_t_ara_pty_jukeboxValentineA</li><li>tt_t_ara_pty_jukeboxValentineB</li><li>tt_t_ara_pty_mailboxSummer</li><li>tt_t_ara_pty_mailboxWinter</li><li>tt_t_ara_pty_partyCatchGroundWinter</li><li>tt_t_ara_pty_partyCatchLeavesWinter</li><li>tt_t_ara_pty_partyCatchWinter</li><li>tt_t_ara_pty_propStageWinter</li><li>tt_t_ara_pty_trampolineValentine</li><li>tt_t_ara_pty_trampolineVictory</li><li>tt_t_ara_pty_trampolineWinter</li><li>tt_t_ara_pty_trashcanSummer</li><li>tt_t_ara_pty_trashcanWinter</li></ul></div>
+<div class="folder"><div class="path">phase_4/maps/</div><ul class="names"><li>tt_t_ara_gen_jellybeanJamSign</li><li>tt_t_ara_gen_trickOrTreatSign</li><li>tt_t_ara_ttc_stormSellbotSign</li><li>tt_t_ara_ttc_victoryPartySign</li><li>tt_t_ara_ttc_victorySoonSign</li><li>tt_t_chr_avt_shirtSleeve_halloween06</li><li>tt_t_chr_avt_shirtSleeve_halloween07</li><li>tt_t_chr_avt_shirtSleeve_halloween5</li><li>tt_t_chr_avt_shirtSleeve_halloweenTurtle</li><li>tt_t_chr_avt_shirtSleeve_hydrant</li><li>tt_t_chr_avt_shirtSleeve_mailbox</li><li>tt_t_chr_avt_shirtSleeve_trashcan</li><li>tt_t_chr_avt_shirtSleeve_vampire</li><li>tt_t_chr_avt_shirtSleeve_victoryParty01</li><li>tt_t_chr_avt_shirtSleeve_victoryParty02</li><li>tt_t_chr_avt_shirtSleeve_winter02</li><li>tt_t_chr_avt_shirtSleeve_winter03</li><li>tt_t_chr_avt_shirt_halloween06</li><li>tt_t_chr_avt_shirt_halloween07</li><li>tt_t_chr_avt_shirt_halloween5</li><li>tt_t_chr_avt_shirt_halloweenTurtle</li><li>tt_t_chr_avt_shirt_hydrant</li><li>tt_t_chr_avt_shirt_mailbox</li><li>tt_t_chr_avt_shirt_trashcan</li><li>tt_t_chr_avt_shirt_vampire</li><li>tt_t_chr_avt_shirt_victoryParty01</li><li>tt_t_chr_avt_shirt_victoryParty02</li><li>tt_t_chr_avt_shirt_winter02</li><li>tt_t_chr_avt_shirt_winter03</li><li>tt_t_chr_avt_shorts_halloween5</li><li>tt_t_chr_avt_shorts_halloweenTurtle</li><li>tt_t_chr_avt_shorts_vampire</li><li>tt_t_chr_csc_daisyCostume</li><li>tt_t_efx_snowmanHead_short</li><li>tt_t_efx_snowmanHead_tall</li><li>tt_t_gui_pty_partyInvite_victory1</li><li>tt_t_gui_pty_partyInvite_winter1</li></ul></div>
+<div class="folder"><div class="path">phase_5.5/maps/</div><ul class="names"><li>tt_t_ara_pty_cogTubeVictory</li></ul></div>
+<div class="folder"><div class="path">phase_5/maps/</div><ul class="names"><li>tt_t_ara_ttc_mailbox</li><li>tt_t_ara_ttc_trashcan</li></ul></div>
+<div class="folder"><div class="path">phase_6/maps/</div><ul class="names"><li>tt_t_ara_dod_trashcan</li><li>tt_t_ara_mml_hydrant</li><li>tt_t_ara_mml_mailbox</li><li>tt_t_ara_mml_trashcan</li><li>tt_t_chr_csc_chipBody</li><li>tt_t_chr_csc_chipCostume</li><li>tt_t_chr_csc_daleBody</li><li>tt_t_chr_csc_daleCostume</li><li>tt_t_chr_csc_donaldCostume</li></ul></div>
+<div class="folder"><div class="path">phase_8/maps/</div><ul class="names"><li>tt_t_ara_ddl_jellybeanJamSign</li><li>tt_t_ara_ddl_mailbox</li><li>tt_t_ara_ddl_stormSellbotSign</li><li>tt_t_ara_ddl_trashcan</li><li>tt_t_ara_ddl_trickOrTreatSign</li><li>tt_t_ara_ddl_victoryPartySign</li><li>tt_t_ara_ddl_victorySoonSign</li><li>tt_t_ara_dga_hydrant</li><li>tt_t_ara_dga_mailbox</li><li>tt_t_ara_dga_trashcan</li><li>tt_t_ara_tbr_mailbox</li><li>tt_t_ara_tbr_trashcan</li></ul></div>
+</details>
+<details class="kind" data-kind ><summary><span class="kname">Sounds</span> <span class="kcount">194</span></summary>
+<div class="folder"><div class="path">phase_13/audio/sfx/</div><ul class="names"><li>tt_s_ara_pty_tubeCogVictory_wave</li></ul></div>
+<div class="folder"><div class="path">phase_5/audio/sfx/</div><ul class="names"><li>tt_s_ara_ttc_hydrant_fightBoost</li><li>tt_s_ara_ttc_hydrant_fightCheer</li><li>tt_s_ara_ttc_hydrant_fightIdle</li><li>tt_s_ara_ttc_hydrant_fightSad</li><li>tt_s_ara_ttc_hydrant_firstMoveArmUp1</li><li>tt_s_ara_ttc_hydrant_firstMoveArmUp2</li><li>tt_s_ara_ttc_hydrant_firstMoveArmUp3</li><li>tt_s_ara_ttc_hydrant_firstMoveJump</li><li>tt_s_ara_ttc_hydrant_firstMoveJumpBalance</li><li>tt_s_ara_ttc_hydrant_firstMoveJumpSpin</li><li>tt_s_ara_ttc_hydrant_firstMoveStruggle</li><li>tt_s_ara_ttc_hydrant_idle0</li><li>tt_s_ara_ttc_hydrant_idle1</li><li>tt_s_ara_ttc_hydrant_idle2</li><li>tt_s_ara_ttc_hydrant_idleAwesome3</li><li>tt_s_ara_ttc_hydrant_idleIntoFight</li><li>tt_s_ara_ttc_hydrant_victoryDance</li><li>tt_s_ara_ttc_mailbox_fightBoost</li><li>tt_s_ara_ttc_mailbox_fightCheer</li><li>tt_s_ara_ttc_mailbox_fightIdle</li><li>tt_s_ara_ttc_mailbox_fightSad</li><li>tt_s_ara_ttc_mailbox_idle0</li><li>tt_s_ara_ttc_mailbox_idleAwesome3</li><li>tt_s_ara_ttc_mailbox_idleIntoFight</li><li>tt_s_ara_ttc_mailbox_idleLook1</li><li>tt_s_ara_ttc_mailbox_idleTake2</li><li>tt_s_ara_ttc_mailbox_victoryDance</li><li>tt_s_ara_ttc_trashcan_fightBoost</li><li>tt_s_ara_ttc_trashcan_fightCheer</li><li>tt_s_ara_ttc_trashcan_fightIdle</li><li>tt_s_ara_ttc_trashcan_fightSad</li><li>tt_s_ara_ttc_trashcan_idleAwesome3</li><li>tt_s_ara_ttc_trashcan_idleHiccup0</li><li>tt_s_ara_ttc_trashcan_idleIntoFight</li><li>tt_s_ara_ttc_trashcan_idleLook1</li><li>tt_s_ara_ttc_trashcan_idleTake2</li><li>tt_s_ara_ttc_trashcan_victoryDance</li></ul></div>
+<div class="folder"><div class="path">phase_6/audio/sfx/</div><ul class="names"><li>tt_s_ara_dod_mailbox_fightBoost</li><li>tt_s_ara_dod_mailbox_fightCheer</li><li>tt_s_ara_dod_mailbox_fightIdle</li><li>tt_s_ara_dod_mailbox_fightSad</li><li>tt_s_ara_dod_mailbox_firstMoveFlagSpin1</li><li>tt_s_ara_dod_mailbox_firstMoveFlagSpin2</li><li>tt_s_ara_dod_mailbox_firstMoveFlagSpin3</li><li>tt_s_ara_dod_mailbox_firstMoveJump</li><li>tt_s_ara_dod_mailbox_firstMoveJump3Summersaults</li><li>tt_s_ara_dod_mailbox_firstMoveJumpFall</li><li>tt_s_ara_dod_mailbox_firstMoveJumpSummersault</li><li>tt_s_ara_dod_mailbox_firstMoveStruggle</li><li>tt_s_ara_dod_mailbox_idle0</li><li>tt_s_ara_dod_mailbox_idle1</li><li>tt_s_ara_dod_mailbox_idle2</li><li>tt_s_ara_dod_mailbox_idleAwesome3</li><li>tt_s_ara_dod_mailbox_idleIntoFight</li><li>tt_s_ara_dod_mailbox_victoryDance</li><li>tt_s_ara_dod_trashcan_fightBoost</li><li>tt_s_ara_dod_trashcan_fightCheer</li><li>tt_s_ara_dod_trashcan_fightIdle</li><li>tt_s_ara_dod_trashcan_fightSad</li><li>tt_s_ara_dod_trashcan_idle0</li><li>tt_s_ara_dod_trashcan_idle1</li><li>tt_s_ara_dod_trashcan_idleAwesome3</li><li>tt_s_ara_dod_trashcan_idleBounce2</li><li>tt_s_ara_dod_trashcan_idleIntoFight</li><li>tt_s_ara_dod_trashcan_victoryDance</li><li>tt_s_ara_mml_hydrant_fightBoost</li><li>tt_s_ara_mml_hydrant_fightCheer</li><li>tt_s_ara_mml_hydrant_fightIdle</li><li>tt_s_ara_mml_hydrant_fightSad</li><li>tt_s_ara_mml_hydrant_idle0</li><li>tt_s_ara_mml_hydrant_idle1</li><li>tt_s_ara_mml_hydrant_idle2</li><li>tt_s_ara_mml_hydrant_idleAwesome3</li><li>tt_s_ara_mml_hydrant_idleIntoFight</li><li>tt_s_ara_mml_hydrant_victoryDance</li><li>tt_s_ara_mml_mailbox_fightBoost</li><li>tt_s_ara_mml_mailbox_fightCheer</li><li>tt_s_ara_mml_mailbox_fightIdle</li><li>tt_s_ara_mml_mailbox_fightSad</li><li>tt_s_ara_mml_mailbox_idle0</li><li>tt_s_ara_mml_mailbox_idleAwesome3</li><li>tt_s_ara_mml_mailbox_idleIntoFight</li><li>tt_s_ara_mml_mailbox_idleLook2</li><li>tt_s_ara_mml_mailbox_idleTake1</li><li>tt_s_ara_mml_mailbox_victoryDance</li><li>tt_s_ara_mml_trashcan_fightBoost</li><li>tt_s_ara_mml_trashcan_fightCheer0</li><li>tt_s_ara_mml_trashcan_fightCheer1</li><li>tt_s_ara_mml_trashcan_fightIdle</li><li>tt_s_ara_mml_trashcan_fightSad</li><li>tt_s_ara_mml_trashcan_idleAwesome3</li><li>tt_s_ara_mml_trashcan_idleBounce0</li><li>tt_s_ara_mml_trashcan_idleHelicopter2</li><li>tt_s_ara_mml_trashcan_idleIntoFight</li><li>tt_s_ara_mml_trashcan_idleLook1</li><li>tt_s_ara_mml_trashcan_victoryDance</li></ul></div>
+<div class="folder"><div class="path">phase_8/audio/sfx/</div><ul class="names"><li>tt_s_ara_ddl_hydrant_fightBoost</li><li>tt_s_ara_ddl_hydrant_fightCheer</li><li>tt_s_ara_ddl_hydrant_fightIdle</li><li>tt_s_ara_ddl_hydrant_fightSad</li><li>tt_s_ara_ddl_hydrant_idle0</li><li>tt_s_ara_ddl_hydrant_idle1</li><li>tt_s_ara_ddl_hydrant_idle2</li><li>tt_s_ara_ddl_hydrant_idleAwesome3</li><li>tt_s_ara_ddl_hydrant_idleIntoFight</li><li>tt_s_ara_ddl_hydrant_victoryDance</li><li>tt_s_ara_ddl_mailbox_fightBoost</li><li>tt_s_ara_ddl_mailbox_fightCheer</li><li>tt_s_ara_ddl_mailbox_fightIdle</li><li>tt_s_ara_ddl_mailbox_fightSad</li><li>tt_s_ara_ddl_mailbox_idleAwesome3</li><li>tt_s_ara_ddl_mailbox_idleIntoFight</li><li>tt_s_ara_ddl_mailbox_idleShake2</li><li>tt_s_ara_ddl_mailbox_idleSleep0</li><li>tt_s_ara_ddl_mailbox_idleSnore1</li><li>tt_s_ara_ddl_mailbox_victoryDance</li><li>tt_s_ara_ddl_trashcan_fightBoost</li><li>tt_s_ara_ddl_trashcan_fightCheer</li><li>tt_s_ara_ddl_trashcan_fightIdle</li><li>tt_s_ara_ddl_trashcan_fightSad</li><li>tt_s_ara_ddl_trashcan_idleAwesome3</li><li>tt_s_ara_ddl_trashcan_idleIntoFight</li><li>tt_s_ara_ddl_trashcan_idleShake2</li><li>tt_s_ara_ddl_trashcan_idleSleep0</li><li>tt_s_ara_ddl_trashcan_idleSnore1</li><li>tt_s_ara_ddl_trashcan_victoryDance</li><li>tt_s_ara_dga_hydrant_fightBoost</li><li>tt_s_ara_dga_hydrant_fightCheer</li><li>tt_s_ara_dga_hydrant_fightIdle</li><li>tt_s_ara_dga_hydrant_fightSad</li><li>tt_s_ara_dga_hydrant_idle0</li><li>tt_s_ara_dga_hydrant_idleAwesome3</li><li>tt_s_ara_dga_hydrant_idleIntoFight</li><li>tt_s_ara_dga_hydrant_idleLook1</li><li>tt_s_ara_dga_hydrant_idleSneeze2</li><li>tt_s_ara_dga_hydrant_victoryDance</li><li>tt_s_ara_dga_mailbox_fightBoost</li><li>tt_s_ara_dga_mailbox_fightCheer</li><li>tt_s_ara_dga_mailbox_fightIdle</li><li>tt_s_ara_dga_mailbox_fightSad</li><li>tt_s_ara_dga_mailbox_idle0</li><li>tt_s_ara_dga_mailbox_idleAwesome3</li><li>tt_s_ara_dga_mailbox_idleIntoFight</li><li>tt_s_ara_dga_mailbox_idleLook2</li><li>tt_s_ara_dga_mailbox_idleTake1</li><li>tt_s_ara_dga_mailbox_victoryDance</li><li>tt_s_ara_dga_trashcan_fightBoost</li><li>tt_s_ara_dga_trashcan_fightCheer</li><li>tt_s_ara_dga_trashcan_fightIdle</li><li>tt_s_ara_dga_trashcan_fightSad</li><li>tt_s_ara_dga_trashcan_firstMoveJump</li><li>tt_s_ara_dga_trashcan_firstMoveJumpHit</li><li>tt_s_ara_dga_trashcan_firstMoveJumpJuggle</li><li>tt_s_ara_dga_trashcan_firstMoveLidFlip1</li><li>tt_s_ara_dga_trashcan_firstMoveLidFlip2</li><li>tt_s_ara_dga_trashcan_firstMoveLidFlip3</li><li>tt_s_ara_dga_trashcan_firstMoveStruggle</li><li>tt_s_ara_dga_trashcan_idleAwesome3</li><li>tt_s_ara_dga_trashcan_idleHiccup0</li><li>tt_s_ara_dga_trashcan_idleIntoFight</li><li>tt_s_ara_dga_trashcan_idleLook1</li><li>tt_s_ara_dga_trashcan_idleTake2</li><li>tt_s_ara_dga_trashcan_victoryDance</li><li>tt_s_ara_tbr_hydrant_fightBoost</li><li>tt_s_ara_tbr_hydrant_fightCheer</li><li>tt_s_ara_tbr_hydrant_fightIdle</li><li>tt_s_ara_tbr_hydrant_fightSad</li><li>tt_s_ara_tbr_hydrant_idleAwesome3</li><li>tt_s_ara_tbr_hydrant_idleIntoFight</li><li>tt_s_ara_tbr_hydrant_idleRubNose0</li><li>tt_s_ara_tbr_hydrant_idleShiver1</li><li>tt_s_ara_tbr_hydrant_idleSneeze2</li><li>tt_s_ara_tbr_hydrant_victoryDance</li><li>tt_s_ara_tbr_mailbox_fightBoost</li><li>tt_s_ara_tbr_mailbox_fightCheer</li><li>tt_s_ara_tbr_mailbox_fightIdle</li><li>tt_s_ara_tbr_mailbox_fightSad</li><li>tt_s_ara_tbr_mailbox_idleAwesome3</li><li>tt_s_ara_tbr_mailbox_idleIntoFight</li><li>tt_s_ara_tbr_mailbox_idleShiver1</li><li>tt_s_ara_tbr_mailbox_idleSneeze2</li><li>tt_s_ara_tbr_mailbox_idleSpin0</li><li>tt_s_ara_tbr_mailbox_victoryDance</li><li>tt_s_ara_tbr_trashcan_fightBoost</li><li>tt_s_ara_tbr_trashcan_fightCheer</li><li>tt_s_ara_tbr_trashcan_fightIdle</li><li>tt_s_ara_tbr_trashcan_fightSad</li><li>tt_s_ara_tbr_trashcan_idle0</li><li>tt_s_ara_tbr_trashcan_idleAwesome3</li><li>tt_s_ara_tbr_trashcan_idleIntoFight</li><li>tt_s_ara_tbr_trashcan_idleShiver1</li><li>tt_s_ara_tbr_trashcan_idleSneeze2</li><li>tt_s_ara_tbr_trashcan_victoryDance</li></ul></div>
+</details>
+</section>
+    </details>
+  </div>
+
+  <section class="contact" id="contact" aria-labelledby="contact-title">
+    <h2 id="contact-title">Contact</h2>
+    <p>Have one of these files, or know where one might be? Message me on Discord.</p>
+    <div class="handle">
+      <span class="handle-label">Discord</span>
+      <span class="handle-name" id="discord-name">rosa.marie</span>
+      <button type="button" id="copy-discord">Copy name</button>
+    </div>
+  </section>
+
+  <footer>
+    <p>Compared against the final client's files as kept by Open Toontown (sv1.0.47.38). Left out: texture atlases and alpha halves the build makes itself, and Panda3D's own built-in models.</p>
+    <p>ToonTown Godot is a fan project and isn't affiliated with Disney.</p>
+  </footer>
+</div>
+
+<script>
+(function () {
+  const input = document.getElementById('find');
+  const status = document.getElementById('find-status');
+  const groups = Array.from(document.querySelectorAll('[data-group]'));
+  const seasonalWrap = document.getElementById('seasonal-wrap');
+  const openState = new Map();
+  document.querySelectorAll('details').forEach(d => openState.set(d, d.open));
+
+  function apply() {
+    const q = input.value.trim().toLowerCase();
+    let hits = 0;
+    groups.forEach(g => {
+      let groupHits = 0;
+      g.querySelectorAll('[data-kind]').forEach(k => {
+        let kindHits = 0;
+        k.querySelectorAll('.folder').forEach(f => {
+          let folderHits = 0;
+          f.querySelectorAll('li').forEach(li => {
+            const match = !q || li.textContent.toLowerCase().includes(q);
+            li.hidden = !match;
+            li.classList.toggle('hit', !!q && match);
+            if (match) folderHits++;
+          });
+          f.hidden = folderHits === 0;
+          kindHits += folderHits;
+        });
+        k.hidden = kindHits === 0;
+        k.open = q ? kindHits > 0 : openState.get(k);
+        groupHits += kindHits;
+      });
+      g.hidden = groupHits === 0;
+      hits += groupHits;
+    });
+    if (q) {
+      seasonalWrap.open = !!seasonalWrap.querySelector('[data-group]:not([hidden])');
+      seasonalWrap.hidden = !seasonalWrap.open;
+      status.textContent = hits ? `${hits} matching name${hits === 1 ? '' : 's'}` : 'No missing file has that in its name.';
+    } else {
+      seasonalWrap.hidden = false;
+      seasonalWrap.open = openState.get(seasonalWrap);
+      status.textContent = '';
+    }
+  }
+  input.addEventListener('input', apply);
+  const copy = document.getElementById('copy-discord');
+  const name = document.getElementById('discord-name');
+  copy.addEventListener('click', () => {
+    const done = () => { copy.textContent = 'Copied'; setTimeout(() => { copy.textContent = 'Copy name'; }, 1600); };
+    const select = () => { const r = document.createRange(); r.selectNodeContents(name); const sel = getSelection(); sel.removeAllRanges(); sel.addRange(r); copy.textContent = 'Selected, press Ctrl+C'; };
+    try { navigator.clipboard.writeText(name.textContent).then(done, select); } catch (e) { select(); }
+  });
+  document.querySelectorAll('a[href="#seasonal"]').forEach(a =>
+    a.addEventListener('click', () => { seasonalWrap.open = true; }));
+})();
+</script>
+
+</body></html>
